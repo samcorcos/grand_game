@@ -9,18 +9,16 @@
       </button>
     </div>
     <div class="container">
-      <button type="submit" id="submit-combat-button" class="btn btn-default">Submit Combat</button>
+      <button type="submit" id="submit-combat-button" class="btn btn-default" form="combatant-form">Submit Combat</button>
     </div>
   </div>
-
-
 </template>
 
 
 
 <template name="combat">
-  <div id="combatant-form">
-    <form action="" role="form">
+  <div class="combatant-form">
+    <form id="combatant-form" action="" role="form">
       <div class="form-group">
         <label for="combatant-name" id="combatant-form-label">Name of Combatant</label>
         <input type="text" class="form-control" id="combatant-name" placeholder="General Ludendorff" required>
@@ -43,14 +41,6 @@
         <label for="supplied-infantry" id="combatant-form-label">Supplied Infantry</label>
         <input type="number" class="form-control" id="supplied-infantry" placeholder=0>
       </div>
-
-
-
-
     </form>
   </div>
-
-
-
-
 </template>
