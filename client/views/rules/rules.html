@@ -1,0 +1,1100 @@
+<template name="rules">
+	<div class="container">
+		<h1>
+			Rules
+		</h1>
+		<div class="">
+			<h3 class="">
+				The Board
+			</h3>
+				<p>
+					The game board contains several different types of boundaries and two terrain types: land and sea territories.
+				</p>
+				<p>
+					Additionally, there are some modifiers that apply to certain territories that give them special properties: cities, ports, railroads, mountains, rivers, shoreline, and canals.
+				</p>
+				<p>
+					Sea territories are relatively large compared to land territories and also have slightly different properties as well
+				</p>
+				<p>
+					These are the bountary types:
+					<ul>
+						<li><strong>Economic Zones</strong>: these are collections of land (plain and mountain) territories; economic development takes place at the zone level rather than at the territory leve.</li>
+						<li><strong>National Borders</strong>: these define the areas possessed by each nation at the beginning of the game and may cut across economic zones.</li>
+					</ul>
+				</p>
+				<p>The game board will be divided up into some number of countries depending on the number of players in the game. Generally, there will be at least two more countries than players in the game.</p>
+				<p>
+					Half of the countries in the game will be "large" countries that contain on the order of 12-18 land territories. The other half will be "small" countries that contain fewer territories.
+				</p>
+				<p>
+					Not all countries must be claimed for the game to operate; there are extensive provisions in the rules for neutral countries.
+				</p>
+				<h4>
+					Economic Zones
+				</h4>
+					<p>
+						While the exact details will vary by country and by map, generally each economic zone will contain 4-6 land territories.
+					</p>
+					<p>
+						Players either have <strong>full</strong>, <strong>partial</strong>, or <strong>no</strong> control over an economic zone.
+					</p>
+					<p>
+						To have full control, a player must possess <em>all</em> of the land territories in that zone.
+					</p>
+					<p>
+						To have partial control, a player must possess at least 51% of teh land territories in that zone.
+					</p>
+					<p>
+						Not all zones will necessarily be controlled by a player at all times; furthermore, players typically will begin with partial control over some zones rather than full control.
+					</p>
+					<p>
+						Although sea territories will be included in economic zones, they do not contribute to economic zones and have no role in determining which player controls an economic zone.
+					</p>
+				<h4>
+					Air Zones
+				</h4>
+					<p>
+						Air zones are the same as economic zones, and may include both sea and land territories.
+					</p>
+					<p>
+						Air zones represent areas in which the player may contend for air control. The player with air supremacy may then apply a modifier to <em>every</em> unit in <em>every</em> (land and sea) territory in that air zone.
+					</p>
+				<h4>
+					Terrain Modifiers
+				</h4>
+					<p>
+						Below is a list of terrain modifiers.
+					</p>
+					<ul>
+						<li><strong>Cities</strong>: These are your production centers; they produce land units, air units, and supply. Additionally, territories with cities receive a defensive bonus (for a list of combat bonuses, see the combat section).</li>
+						<li><strong>Ports</strong>: Ports are cities located on the shoreline. Ports allow you to build ships. They receive the same defensive bonus as a city.</li>
+						<li><strong>Railroads</strong>: Railroads allow you to move units more quickly around the map. Railroads can be both built and destroyed. Railroads are owned by the player owning the land territory. For operational details, see the section on military orders and movement.</li>
+						<li><strong>Mountains</strong>: Mountains provide a defensive bonus (see the bonus list in the combat section)</li>
+						<li><strong>Rivers</strong>: Rivers provide a directional defensive bonus that applies against an army attacking over the river.</li>
+						<li><strong>Shoreline</strong>: Shoreline provides a directional defensive bonus against a landing army.</li>
+						<li><strong>Canals</strong>: Canals provide a defensive bonus and act as a "ship railroad", allowing ships to pass through two bodies of water. As long as the player possesses (or obtains permission from the owner of) the canal, the player may pass ships through the canal.</li>
+					</ul>
+					<p>
+						The territory modifiers work together and generate what I view as the appropriate "defense-offense" balance.
+					</p>
+					<p>
+						The attacker has the advantage of choosing the time, place, has the advantage of troop concentration.
+					</p>
+					<p>
+						The defense has the advantage of terrain, short supply lines, and interior supply lines.
+					</p>
+					<p>
+						Each of the types of terrain modifiers will be discussed more extensively in the section of the rules which their modifications affect.
+					</p>
+			<h3 class="">
+				The Turn
+			</h3>
+				<p>
+					Each turn consists of three phases:
+					<ol>
+						<li>One allocation phase</li>
+						<li>Three combat seasons</li>
+						<li>One reconciliation phase</li>
+					</ol>
+				</p>
+				<p>
+					During the allocation phase, players place orders for how to allocate their GDP for the next season.
+				</p>
+				<p>
+					The combat seasons involve moving units in each of the three seasons: spring, fall, and winter. Every combat season ends with a combat reconciliation phase, which occurs after all combat orders are given and units in conflict resolve their disputes.
+				</p>
+				<p>
+					In the reconciliation phase, players obtain political outcomes and receive production ordered during allocation phase.
+				</p>
+				<h4>
+					Allocation
+				</h4>
+					<p>
+						In the allocation phase, players take their total GDP and use it to purchase several different types of goods. You may not "roll-over" GDP into the future: productive capacity not used is lost.
+					</p>
+					<p>
+						Additionally, you may not buy, sell, or trade GDP.
+					</p>
+					<p>
+						Below is a list of all types of items players may purchase with their GDP:
+						<ul>
+							<li><strong>Politics</strong>: This is done in four increments: 0%, 10%, 20%, or 30% of GDP. Your political spending determines both your political outcomes and your income in Francs. See the detailed section on politics and "in-game cash" (Francs) for more information. You do not need to specify a place with this purchase; it occurs entirely off-board.</li>
+							<li><strong>GDP Development</strong>: <strong>You must assign GDP development to particular economic zones</strong>. As you buy more GDP development, it becomes more expensive.</li>
+							<li><strong>Atomic Research</strong>: At the end of the game, you will have a probability of developing the bomb based on the share of the world's atomic research you possess. Atomic research gets more expensive as the game progresses. You do not need to specify a particular place to produce the atomic research.</li>
+							<li><strong>Military Units and Supplies</strong>: You may purchase: <strong>infantry</strong>, <strong>armor</strong>, <strong>light fleets</strong>, <strong>heavy fleets</strong>, and <strong>supplies</strong>. These units can only be produced in a port or a city. <strong>Players must specify the cities in which they intend to build their units!</strong> Prices and capabilities are listed elsewhere.</li>
+						</ul>
+					</p>
+					<p>
+						Each player prepares his allocation simultaneously. Allocations are private knowledge until the reconciliation phase, at which point all aspects of the allocation are revealed.
+					</p>
+					<p>
+						The allocation phase will take place with a strict time limit; all players must complete their allocation within that amount of time and submit it via whatever process the players have agreed to in advance.
+					</p>
+				<h4>
+					Combat
+				</h4>
+					<p>
+						Each combat season - in order, first Spring, then Fall, then Winter - has its own simultaneously executed parts.
+					</p>
+					<p>
+						The combat season begins with every player writing orders and submitting them before the expiration of an agreed-upon time limit. Players will typically have a short period of time (perhaps seven or eight minutes) to write their orders.
+					</p>
+					<p>
+						Once all orders are submitted, the combat reconciliation phase occurs. One player will read and execute all of the orders simultaneously and resolve all conflicts on the board.
+					</p>
+					<p>
+						After combat reconclilation, players may buy infantry and supply using Francs for double their cost in GDP (an infantry costs 10 Francs, a supply 2 Francs). Players may only purchase infantry and supply with Francs, and can only place them in cities and ports.
+					</p>
+				<h4>
+					Reconciliation
+				</h4>
+					<p>
+						The reconciliation phase does not include any strategic elements.
+					</p>
+					<p>
+						Players first draw their political fate from the politics card decks.
+					</p>
+					<p>
+						Next they place the units and supplies that they ordered, update their GDP, and record their atomic research.
+					</p>
+			<h3 class="">
+				Combat
+			</h3>
+				<p>
+					The most important aspect of the new combat system is the separation of "Victory" from "Casualties".
+				</p>
+				<p>
+					A defeated army must retreat, even if it took no casualties—just like the combat system in the game <em>Diplomacy</em>.
+				</p>
+				<p>
+					A victorious army must advance into the space it conquered with all units the player selected for the attack. It is possible for an attacking player to hold units in reserve, but that must be specified in the combat orders ex-ante.
+				</p>
+				<p>
+					There is an exception: if the victorious army "wins" the battle but has no units remaining, they do not take the space.
+				</p>
+				<p>
+					The same goes for defense; if a defending army "wins" the combat but has no units remaining while the attacking army does, the defense loses the space.
+				</p>
+				<h4>
+					The Combat System
+				</h4>
+					<p>
+						The game uses a "random" combat system. Both "Victory" and "Casualties" are determined randomly, using more or less the same calculation. The calculation is:
+					</p>
+					<p class="">
+						<strong>Combat Strength v. Combat Strength</strong>
+					</p>
+				<h4>
+					Combat Strength
+				</h4>
+					<p>
+						Individual units have "combat values", which differ between unit types and are modified based on terrain features and air support (described in greater detail below).
+					</p>
+					<p>
+						When combat occurs, each player sums up the combat values of their particupating units to generate their combat strength (e.g. "I have a combat strength of 11.").
+					</p>
+					<p>
+						The basic principle is that if I have a higher total value than you do then I have a greater chance of gaining control over the territory.
+					</p>
+					<p>
+						For example, Attacking Army has a combined combat strength of 30, while Defending Army has a combined combat strength of 10.
+					</p>
+					<p>
+						In this example, the strengths are 30:10 in favor of the attack, or 75%:25%.
+					</p>
+				<h4>
+					Victory
+				</h4>
+					<p>
+						Victory and defeat are determined randomly using the methodoloy described above: combat strength v. combat strength.
+					</p>
+					<p>
+						In the example above, Attacking Army has a 75% chance of winning the battle, thus forcing Defending Army to retreat.
+					</p>
+					<p>
+						Keep in mind: "Victory" and "Casualties" are separate calculations!
+					</p>
+					<p>
+						When a defending army retreats, it must retreat away from the enemy force and towards its main force or towards a city.
+					</p>
+					<p>
+						When an attacking army retreats, it must retreat back to the space it came from. If another army now occupies that space, the attacking army must now fight again at defensive strength, and now becomes a defending army.
+					</p>
+					<p>
+						Retreat orders do not need to be written in the combat orders ex-ante.
+					</p>
+					<p>
+						If disputes arise about retreat orders, the nations involved must agree on another player to be a neutral arbiter to settle the dispute. With few exceptions, a retreating army should not gain a tactical advantage from a retreat.
+					</p>
+				<h4>
+					Casualties
+				</h4>
+					<p>
+						To calculate casualties, <strong>relative combat strength is reduced by half</strong> and applied against each enemy unit to determine whether or not the unit was killed in the battle.
+					</p>
+					<p>
+						In the example above (75%:25%), Attacking Army has a 37% chance of killing each defending unit, while Defending Army has a 12.5% chance of killing each attacking unit.
+					</p>
+					<p>
+						The number of possible casualties inflicted per unit is <strong>capped at 2</strong>, meaning, 1 unit is only capable of killing a maximum of 2 opposing units.
+					</p>
+					<p>
+						<strong>Combat is meant to be multi-iterative</strong> in this combat system. It is unlikely that entire wars will be decided in a single season.
+					</p>
+				<h4>
+					Supplies
+				</h4>
+					<p>
+						A unit's combat value is also affected by supply. All unsupplied units fight at a reduced combat value of 1-1.
+					</p>
+				<h4>
+					Additional Details
+				</h4>
+					<p>
+						This describes the general combat mechanic. There are special rules for both air-to-air combat and sea combat.
+					</p>
+					<p>
+						Furthermore, air combat adds to ground combat at the zone level; the section on air power will discuss this in more detail.
+					</p>
+					<p>
+						Terrain bonuses also affect combat value for each unit.
+					</p>
+					<p>
+						There are also special rules for multi-way combat. The subsequent sections will deal with all of these modifications.
+					</p>
+			<h3>
+				Air Combat
+			</h3>
+				<p>
+					Air combat takes place in "air zones" as players compete for "air superiority".
+				</p>
+				<p>
+					Air units must begin and end their turns in a physical location within an economic zone.
+				</p>
+				<p>
+					During the turn, air units are assigned to an air zone covering either their current air zone or an adjacent air zone.
+				</p>
+				<p>
+					<strong>You must  list the landing place relative to where the aircraft fights in your combat orders.</strong>
+				</p>
+				<p>
+					An aircraft can potentially move as many as 2 zones if it goes from zone A, attacks zone B, and lands in zone C. It is not possible for a plane to move more than 2 zones in a season.
+				</p>
+				<p>
+					You must specify a landing order for each aircraft assigned to a combat zone and it is possible to split the landing orders for aircraft in the same air zone.
+				</p>
+				<p>
+					If an aircraft ends its turn in a zone that is controlled by the enemy, the unit is lost.
+				</p>
+				<p>
+					Aircraft do not require supply.
+				</p>
+				<h4>
+					Air Superiority
+				</h4>
+					<p>
+						<strong>When combat reconciliation begins, air units fight first to determine "air superiority".</strong>
+					</p>
+					<p>
+						Air units fight each other at 1 attack and 1 defense (out of 6). If any units are killed, they are removed from the "air superiority" equation.
+					</p>
+					<p>
+						If one player has more planes than the other, he has "air superiority".
+					</p>
+					<p>
+						When a player has air superiority, he adds +1 to the combat value of every unit in the entire air zone. This effect is the same as the bonus an infantry unit receives when fighting in the mountains.
+					</p>
+					<p>
+						Unlike other bonuses, "air superiority" does count towards the defensive bonus of armor.
+					</p>
+					<p>
+						<strong>This effect does not stack with additional air superiority</strong>. A superiority of 1 plane has the same effect as superiority of 5+ planes. The maximum effect is +1.
+					</p>
+				<h4>
+					Strategic Bombing
+				</h4>
+					<p>
+						Aircraft may also be used for strategic bombing. The player must specify which economic zone he intends to strategically bomb.
+					</p>
+					<p>
+						<strong>Air superiority <em>does</em> stack for strategic bombing!</strong>
+					</p>
+					<p>
+						Assuming an attack is successful and air superiority is established by the attackers, <strong>air superiority of 1 plane will reduce GDP by 1</strong> for the selected economic zone.
+					</p>
+					<p>
+						If the attackers had air superiority of greater than 1, the effect would stack. <strong>Air superiority of 5 planes would do 5 economic damage</strong> to the selected economic zone.
+					</p>
+					<p>
+						Strategic bombing <strong><em>can</em> reduce an economic zone below its starting value</strong> to a minimum of 0.
+					</p>
+			<h3>
+				Sea Combat
+			</h3>
+				<p>
+					Sea combat, unlike land combat, does not involve "control" of sea territories. The fleets of two opposing nations may end the season occupying the same sea territory.
+				</p>
+				<p>
+					There is no "Victory" chance in sea combat. The only way to remove ships is by inflicting casualties.
+				</p>
+				<p>
+					To inflict casualties, though, first you must find the opposing fleet.
+				</p>
+				<p>
+					Combat at sea takes place with two components: <strong>Searching</strong> and <strong>Casualties</strong>.
+				</p>
+				<p>
+					Searching takes place whether the armadas would like to find each other or not. There is no longer an option to "hide". Think of it as the odds of two fleets randomly seeing each other. Larger fleets have a much higher probability, and at some point, a certainty.
+				</p>
+				<h4>
+					Search
+				</h4>
+					<p>
+						To search, an armada gains a 10% chance of finding an enemy armada for every ship in its group. The probability of finding the enemy is rolled once for the entire armada, not once per unit.
+					</p>
+					<p>
+						For example, a lone ship has only a 10% chance of finding an enemy armada; 5 ships have a 50% chance; 10 ships have a 100% chance.
+					</p>
+					<p>
+						<strong>Air superiority guarantees the fleet will be spotted</strong>. Combat takes place if one fleet finds the other. If neither fleet searches successfully, no combat takes place.
+					</p>
+				<h4>
+					Transport
+				</h4>
+					<p>
+						Light fleets can carry up to <strong>two land units and six supply</strong>.
+					</p>
+					<p>
+						Heavy fleets can base up to <strong>one aircraft and six supply</strong>.
+					</p>
+					<p>
+						Fleet units all have a combat value (see the table of combat values). Unsupplied units fight at a value of 1.
+					</p>
+				<h4>
+					Loaded v. Unloaded
+				</h4>
+					<p>
+						There will inevitably be confusion about casualties on loaded v. unloaded light fleets because some will be loaded and some will be empty.
+					</p>
+					<p>
+						For the sake of simplicity, unloaded light fleets will be sunk before loaded fleets. Imagine that light fleets are comprised of destroyers and transports and that the destroyers are destroyed first.
+					</p>
+				<h4>
+					Movement
+				</h4>
+					<p>
+						Two fleets may not "pass through" each other without performing a search roll.
+					</p>
+					<p>
+						If the fleets find each other, they both fight at attack strength and <strong>air superiority is determined</strong> by combining the values of the two territories.
+					</p>
+				<h4>
+					Ports
+				</h4>
+					<p>
+						Ships are built in ports. Ports are land territories that may house friendly sea units.
+					</p>
+					<p>
+						Sailing out of a port costs one unit of movement, as does sailing into a port. There are special rules for combat in ports.
+					</p>
+				<h4>
+					Combat in Ports
+				</h4>
+					<p>
+						A player may attack into a hostile port with sea units but may not conquer it.
+					</p>
+					<p>
+						At the conclusion of combat, the attacking units are returned to the adjacent sea zone and perform an additional search if they coexist with hostile sea units.
+					</p>
+					<p>
+						Combat in ports automatically triggers an engagement and no "search" roll is necessary.
+					</p>
+					<p>
+						The defending fleet receives a +1 defensive bonus for fighting within the port. Thus, attacking into a port is costly and inadvisable business.
+					</p>
+			<h3>
+				Land Combat
+			</h3>
+				<p>
+					Land combat uses the general combat system described earler. Each side computes its combat strength, adds any modifiers (terrain or air superiority), and computes "Victory" and "Casualties".
+				</p>
+				<p>
+					This section describes the modifiers: the way terrain affects base combat value, land movement and railroads, loading and unloading of transports, and the available orders.
+				</p>
+				<h4>
+					Terrain Modifiers
+				</h4>
+					<p>
+						There is only one type of terrain modifier: modifiers that add points to the combat value of defending infantry.
+					</p>
+					<p>
+						Terrain modifiers to not give defensive advantages to armor!
+					</p>
+					<p>
+						Cities, Ports, and Mountains add +1 to the combat value of <em>each</em> defending infantry.
+					</p>
+					<p>
+						Rivers, Canals, and Shoreline provide a directional +1 defensive bonus to infantry when the attacking units fight across them.
+					</p>
+					<p>
+						When fighting in winter, all defending infantry receive an additional +1.
+					</p>
+				<h4>
+					Railroads
+				</h4>
+					<p>
+						Railroads modify movement range and have no combat value.
+					</p>
+					<p>
+						Land units typically may move one land territory per turn. However, <strong>a unit which <em>starts</em> on a railroad territory</strong> (or a city or port with a railroad) may move any number of spaces along the railway and must end at some point along the railway, so long as the player controls all of the railway territories at the beginning of his turn or obtains written permission from another player to use his railway.
+					</p>
+					<p>
+						A unit <strong>may not leave a railroad territory</strong> until the following turn, meaning, a unit cannot cut across the map using a railroad and attack an enemy territory in the same season (though it may defend its own territory if attacked).
+					</p>
+					<p>
+						<strong>Railroad orders occur <em>before</em> other movement</strong>. If another player attempts to cut the rail line, the units <em>on this turn</em> still make it to their final destination.
+					</p>
+					<p>
+						In sum:
+						<ul>
+							<li>Rail movements happen before other movements when resolving orders</li>
+							<li>To use a railway, you must start on it</li>
+							<li>If you use the railway, you must end the season on the same railway</li>
+							<li>If some other player occupies part of your path, you myst obtain written permission to use "their" railway</li>
+						</ul>
+					</p>
+				<h4>
+					Railway Permissions
+				</h4>
+					<p>
+						Railway permissions require some additional rules to prevent abuse.
+					</p>
+					<p>
+						A player may write any type of permission. For example, any of these permissions would be acceptable:
+						<ul>
+							<li>"Jeff may use my railways"</li>
+							<li>"Jeff may use my railways in K14 and K15"</li>
+							<li>"Jeff may move 2 units across my railways"</li>
+							<li>"Jeff may transport supplies, but no units across my railway network"</li>
+							<li>"Jeff may use my railway as long as his units don't end up in any of my cities"</li>
+						</ul>
+					</p>
+					<p>
+						However, the rail permissions must accomodate the rail order <em>as a whole</em>. <strong>If the permission does not grant the full order, <em>none</em> of the order is executed</strong>, and teh units travel as far along the railroad as possible before the conflict occurs.
+					</p>
+					<p>
+						For example, if I give Jeff permission to cross my territory with 3 units and Jeff issues an order for 4 units, all units stop at the last territory on the railway that Jeff controls and none of his units use my railway.
+					</p>
+					<p>
+						If Jeff only orders 2 units, both pass because my orders will accomodate them.
+					</p>
+					<p>
+						Note that the permission only applies to <em>movement</em> and not to <em>order type</em>.
+					</p>
+					<p>
+						So, for example, if you consent to allow me to use your railroads, I can order my entire army into your main city and order them to attack.
+					</p>
+				<h4>
+					Railroad Construction/Destruction
+				</h4>
+					<p>
+						Railroads can also be built and destroyed.
+					</p>
+					<p>
+						A railroad <strong>can be constructed on any territory in control of the player</strong> for <strong>2 GDP</strong>.
+					</p>
+					<p>
+						Railroads can also be destroyed. To destroy a railroad, <strong>one unit myst commit its season to destroying the railroad</strong>. This action does not consume a supply.
+					</p>
+					<p>
+						The unit committed to destroying a railroad does not participate in any attacks, but does contribute to defense as an unsupplied unit. The unit also may not move during the season it has committed to destroying the railroad.
+					</p>
+				<h4>
+					Planes on Trains
+				</h4>
+					<p>
+						Railroads generate one other issue: "planes on trains." Aircraft typically get around the map by moving to an air zone, contending for air superiority, and then moving to an adjacent landing space. This gives them a relatively large operational radius.
+					</p>
+					<p>
+						Nevertheless, the "landing" place for a plane is a physical land territory. Aircraft which start on a land territory that contains a railroad <em>may</em> be transported by railroad to another land territory <em>as with any other land unit</em>.
+					</p>
+					<p>
+						When they arrive at their destination, they must contend for air supremacy. So, you can pack them in crates and dispatch them by rail around the map.
+					</p>
+				<h4>
+					Loading and Unloading by Ship
+				</h4>
+					<p>
+						Land units and supplies may move by ship, and it is possible that a shipping supply line will be more efficient than a rail supply line, depending on ones geography.
+					</p>
+					<p>
+						Units may load and unload from any territory adjacent to a sea territory. If crossing territorial borders, loading and unloading takes one full season for the units and the ship.
+					</p>
+					<p>
+						That means the <strong>ship must already be in the sea territory</strong> and <strong>the land unit must already be in the adjacent territory</strong> for the loading to take place.
+					</p>
+					<p>
+						Unloading also takes a unit's full movement and must be done by a ship already in the adjacent sea zone.
+					</p>
+					<p>
+						The exception here is loading and unloading in ports.
+					</p>
+				<h4>
+					Loading and Unloading in Ports
+				</h4>
+					<p>
+						Loading and unloading in ports happens "for free". You may load units in port, then dispatch the ship to sea in the same season, or sail into a port and unload in the same season.
+					</p>
+				<h4>
+					Other Clarification
+				</h4>
+					<p>
+						Enemy armies may not "pass through" each other.
+					</p>
+					<p>
+						If two sets of enemy armies are attacking into their respective spaces, they engage at attack strength, and air superiority is determined by combining the aircraft from both air zones (if two or more zones are involved.)
+					</p>
+					<p>
+						As mentioned earlier, land combat takes place with two components: a total score that determines control and casualties.
+					</p>
+					<p>
+						Casualties are not completely divorced from control, because <strong>to conquer a territory you must have some land units remaining</strong>.
+					</p>
+					<p>
+						To successfully defend a territory <strong>you must have at least one surviving defender.</strong>
+					</p>
+					<p>
+						In the event both sides are entirely destroyed, <strong>the defender retains control</strong> of the territory.
+					</p>
+			<h3>
+				Multi-way Combat
+			</h3>
+				<p>
+					It may come to pass that units from multiple countries fight in an uncoordinated fashion for control of a sea or land territory. This requires a few adjustments to the rules.
+				</p>
+				<p>
+					Each player fights each other player in pairwise combat at full strength. If the army is attacking, they fight at attack strength.
+				</p>
+				<p>
+					Losses are removed from each individual paired in combat (so, for example, if in two separate combats I lose 1 unit and 2 units, I lose a total of 3 units).
+				</p>
+				<p>
+					For land combat, the country with surviving units with the highest total value occupies the territory.
+				</p>
+				<p>
+					Although multiple battles have occured, each unit only loses one supply.
+				</p>
+				<h4>
+					Coordinated Combat
+				</h4>
+					<p>
+						If two armies invade in a coordinated fasion, their combat values are added together and casualties are determined by the coordinating players.
+					</p>
+					<p>
+						If the coordinating players are defending and the players cannot come to an agreement as to who should take the losses from combat, the player that owns the territory takes as many of the losses as possible.
+					</p>
+					<p>
+						If the coordinating armies are attacking and the players cannot come to an agreement, the two armies then fight each other at attack strength, and the losing army takes as many of the losses as possible, with cumulative losses for both battles (so if additional losses are incurred during the second attack, they are added to the total losses).
+					</p>
+					<p>
+						In other words, it is expensive to disagree over who loses more units.
+					</p>
+			<h3>
+				Base Combat Value and Cost
+			</h3>
+				<table class="">
+					<thead>
+						<tr>
+							<th>Unit Type</th>
+							<th>Attack</th>
+							<th>Defense</th>
+							<th>Cost</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Infantry</td>
+							<td>2</td>
+							<td>3</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>Armor</td>
+							<td>4</td>
+							<td>2</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>Aircraft</td>
+							<td>1</td>
+							<td>1</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<td>Light Fleet</td>
+							<td>2</td>
+							<td>2</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>Heavy Fleet</td>
+							<td>4</td>
+							<td>2</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>Unsupplied Unit</td>
+							<td>1</td>
+							<td>1</td>
+							<td>N/A</td>
+						</tr>
+						<tr>
+							<td>Supply</td>
+							<td>N/A</td>
+							<td>N/A</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					The attack and defense values for the units listed here are their fully-supplied base values.
+				</p>
+				<p>
+					Unless your orders specify otherwise, units use one supply in combat.
+				</p>
+				<p>
+					Unsupplied units fight at a value of 1.
+				</p>
+				<p>
+					Unless otherwise specified, units automatically consume supplied if supplies are available.
+				</p>
+			<h3>
+				Economic Development
+			</h3>
+				<p>
+					As mentioned earlier, economic development works slightly differently in this version.
+				</p>
+				<p>
+					Earlier versions of the game had economic development prices set by the details of the zones or hexes to which the development would apply.
+				</p>
+				<p>
+					In the current version, the development still takes place in a physical location but the prices are set by the level of national GDP.
+				</p>
+				<p>
+					Players purchase additional development points per turn; the development points cost increasing amounts <em>within</em> the turn, with their cost set by the national GDP.
+				</p>
+				<p>
+					Then, during the reconciliation phase, they place those points in the economic zones they earlier designated.
+				</p>
+				<table class="">
+					<thead>
+						<tr>
+							<th>Additional GDP</th>
+							<th colspan="4">Current GDP</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td>
+							<td>(0 - 40)</td>
+							<td>(41 - 80)</td>
+							<td>(81 - 120)</td>
+							<td>(120+)</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+							<td>3</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>4</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>9</td>
+							<td>10</td>
+							<td>12</td>
+							<td>16</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>11</td>
+							<td>12</td>
+							<td>15</td>
+							<td>20</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>13</td>
+							<td>15</td>
+							<td>18</td>
+							<td>25</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>15</td>
+							<td>18</td>
+							<td>21</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>18</td>
+							<td>21</td>
+							<td>25</td>
+							<td>36</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>21</td>
+							<td>24</td>
+							<td>29</td>
+							<td>42</td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>24</td>
+							<td>28</td>
+							<td>33</td>
+							<td>49</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td>27</td>
+							<td>32</td>
+							<td>38</td>
+							<td>56</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td>30</td>
+							<td>36</td>
+							<td>43</td>
+							<td>64</td>
+						</tr>
+						<tr>
+							<td>16</td>
+							<td>34</td>
+							<td>40</td>
+							<td>48</td>
+							<td>72</td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<td>38</td>
+							<td>45</td>
+							<td>54</td>
+							<td>81</td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<td></td>
+							<td>50</td>
+							<td>60</td>
+							<td>90</td>
+						</tr>
+						<tr>
+							<td>19</td>
+							<td></td>
+							<td>55</td>
+							<td>66</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td>20</td>
+							<td></td>
+							<td>60</td>
+							<td>73</td>
+							<td>110</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					For example, if your country has a GDP of 20 (first column, under "Current GDP", "(0 - 40)") and you wanted to add 8 GDP ("Additional GDP" column on the left), you would pay 11 GDP.
+				</p>
+			<h3>
+				Atomic Research
+			</h3>
+				<p>
+					Players may commit resources to producing the atomic bomb.
+				</p>
+				<p>
+					<strong>The bomb costs 300 atomic research units.</strong>
+				</p>
+				<p>
+					Note: in one of the major differences between Democracies and Dictatorships, Democracies get 1 free unit of research per season (3 per turn).
+				</p>
+				<p>
+					Atomic research gets more expensive as the game goes along:
+				</p>
+				<ul>
+					<li>Turns 1-3: 1 unit costs 1 GDP</li>
+					<li>Turns 4-6: 1 unit costs 2 GDP</li>
+					<li>Turns 7+: 1 unit costs 3 GDP</li>
+				</ul>
+				<h4>
+					Selling Nuclear Secrets
+				</h4>
+					<p>
+						A player can sell his "nuclear secrets" to another country for Francs.
+					</p>
+					<p>
+						There is no fixed price for this transaction, and the nation selling its secrets does not lose his level of nuclear research.
+					</p>
+					<p>
+						So, if Country A sells his 50 units of atomic research to Country B (assuming Country B has fewer than 50 units) for 100 Francs, both countries will now have 50 units of atomic research.
+					</p>
+					<p>
+						If Country B already had units (say, 10 units), the units are <em>not</em> cumulative, so Country B will only have 50 units at the end of the transaction.
+					</p>
+				<h4>
+					The Bomb
+				</h4>
+					<p>
+						When a player reaches 300 units of atomic research, he builds the bomb.
+					</p>
+					<p>
+						In the event of a tie, where two countries build the bomb on the same turn, both countries receive a bomb.
+					</p>
+					<p>
+						The player can drop the bomb at his convenience and must write his orders during a subsequent combat season.
+					</p>
+					<p>
+						The bomb is dropped from a plane, thus, the target location must be within two economic zones of an aircraft.
+					</p>
+					<p>
+						When the bomb is dropped on a zone, that zone's economic value is reduced to 0.
+					</p>
+			<h3>
+				In Game Cash and Political Spending
+			</h3>
+				<h4>
+					Francs
+				</h4>
+					<p>
+						Players receive in-game cash (called Francs) through their spending on politics. Think of Francs as "political good will".
+					</p>
+					<p>
+						You receive the amount of in-game cash equal to your political spending (in GDP), subject to modifications on the political cards themselves. You collect that turn's Francs when you resolve your political cards.
+					</p>
+					<p>
+						Some transactions require the expenditure of Francs.
+					</p>
+					<p>
+						If you transfer territories or units (not including supply, which costs nothing to transfer) to another player, you must pay the bank 1 Franc for each unit or territory transferred.
+					</p>
+					<p>
+						This transfer represents the political cost of appearing to "sell-out" your country (an, in practice, it generates a minimum price).
+					</p>
+					<p>
+						If you cannot pay the cost, you may not sell the units, although, a cash exchange may be done simultaneously: if you have 0 Francs, I may pay you the necessary number of Francs to make the transaction possible.
+					</p>
+					<p>
+						Again, also note that there may be restrictions over when you may use Francs.
+					</p>
+				<h3>
+					Political Spending
+				</h3>
+					<p>
+						Players spend either 0%, 15%, or 30% of their GDP on politics.
+					</p>
+					<p>
+						Players write their political spending orders during the allocation phase.
+					</p>
+					<p>
+						During the reconciliation phase, players draw political cards from the corresponding deck of political outcomes - decks based on their chosen spending level and regime type.
+					</p>
+					<p>
+						So a dictatorship with 15% spending draws from the "15% Dictator" deck, and so on.
+					</p>
+					<p>
+						Generally speaking, the political decks reflect the different challenges and advantages of each regime type.
+					</p>
+					<p>
+						Dictators are more stable (both internally and externally) but face more serious consequences from inadequate spending.
+					</p>
+					<p>
+						Democracies, by comparison, have much less stable policy options but are more profitable and rarely have severe domestic political upheaval.
+					</p>
+			<h3>
+				The League of Nations
+			</h3>
+				<p>
+					There will be Neutral Powers that are not controlled by any player.
+				</p>
+				<p>
+					Neutral powers obtain 1 unit and 3 supply on every territory they control.
+				</p>
+				<p>
+					Although they are not active players in the game, their territory is "live": any player may choose to invade a neutral country.
+				</p>
+				<h4>
+					Attacking a Neutral Power
+				</h4>
+					<p>
+						During each combat phase, at the start of the order resolution in that phase, a player must announce if he had ordered his units into a Neutral territory (before any other orders are revealed).
+					</p>
+					<p>
+						Then, the "League of Nations" meets to decide what to do.
+					</p>
+					<p>
+						The "League" will get 5 minutes to argue per Neutral territory subject to invasion. Every player may participate in the League, regardless of their belligerency status.
+					</p>
+					<p>
+						At the conclusion of time, each player submits an amount he is willing to "chip in" to fund the defense of the neutral country.
+					</p>
+					<p>
+						Every 12 Francs contributed instantaneously adds 1 infantry and 1 supply to the territory being invaded. Contributions are rounded down.
+					</p>
+					<p>
+						It is possible that the other powers will choose not to contribute, in which case, no infantry units are added and combat is resolved normally.
+					</p>
+				<h4>
+					Considerations
+				</h4>
+					<p>
+						Generally speaking, a country considering an invasion of a Neutral should keep the intentions of the international community in mind before acting unilaterally.
+					</p>
+					<p>
+						As has been the case for most of human history, a coalition (of the willing?) of international forces can fairly easily thwart or significantly impede an invasion and restore the balance of power.
+					</p>
+					<p>
+						Note that some of the politics cards potentially affect teh operations of the League of Nations.
+					</p>
+			<h3>
+				Starting the Game
+			</h3>
+				<h4>
+					Picking Countries
+				</h4>
+					<p>
+						The game starts with a series of live auctions using real money, with $1 minimum increments ($). This change is being made to make the bidding process more fair for new players.
+					</p>
+					<p>
+						The winner of the auction picks his country before the next auction takes place.
+					</p>
+					<p>
+						The players keep track of the order, as they will place military units in the reverse order of national choice.
+					</p>
+					<p>
+						When a player chooses a nation, he also chooses a regime type (dictatorship or democracy).
+					</p>
+					<p>
+						Players may only choose a single nation.
+					</p>
+				<h4>
+					Initial Francs
+				</h4>
+					<p>
+						Each player begins the game with the number of Francs equal to the auction price he paid in USD up to a maximum of 50 Francs (if he paid $20, he gets 20 Francs; if he paid $50, he gets 50 Francs; if he paid $70, he gets 50 Francs)
+					</p>
+				<h4>
+					Placing Initial Units
+				</h4>
+					<p>
+						Each player also starts with 20 + their initial GDP's worth of GDP units to spend on units and supplies.
+					</p>
+					<p>
+						Players will get a fixed amount of time, once all nations have been chosen, to determine their initial purchase.
+					</p>
+					<p>
+						The purchase of all become common knowledge simultaneously and before any placement begins.
+					</p>
+					<p>
+						Then, starting with the last player to bid successfully, players put 5 combat units (not including supplies) on the board at a time.
+					</p>
+					<p>
+						Once all military units are placed, players may add their supply in no particular order.
+					</p>
+			<h3>
+				End Game
+			</h3>
+				<p>
+					This version of the game has different victory conditions for every player. The game will end on turn 10 if nobody has won by that time.
+				</p>
+				<p>
+					In the extremely unlikely scenario that the game reaches turn 10, the payouts are determined by calculating who came the closest to achieving his stated objective.
+				</p>
+				<p>
+					For example, if your victory condition was "Accumulate 400 Francs" and you accumulated 350, your end game score would be 87.5%.
+				</p>
+				<p>
+					If your victory condition was "Kill Player X", divide his starting territories by the number of territories he currently owns.
+				</p>
+				<p>
+					If the game reaches turn 10, the winning player gets all the loot. This event is exceedingly unlikely to occur, but it is not impossible.
+				</p>
+				<h4>
+					Alternate Victory Conditions
+				</h4>
+					<p>
+						In this version of The Grand Game, every player has a different victory condition. Players will draw randomly from the following options (assuming 10 players in the game):
+					</p>
+					<table class="table medium">
+						<thead>
+							<tr>
+								<th style="width:300px;">Card Name</th>
+								<th># of Cards</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Accumulate 400 Francs</td>
+								<td style="text-align:center;">10</td>
+							</tr>
+							<tr>
+								<td>Conquer 20 territories</td>
+								<td style="text-align:center;">5</td>
+							</tr>
+							<tr>
+								<td>Reach Domestic GDP of 200</td>
+								<td style="text-align:center;">10</td>
+							</tr>
+							<tr>
+								<td>Develop the Atomic Bomb</td>
+								<td style="text-align:center;">5</td>
+							</tr>
+							<tr>
+								<td>Destroy Player X</td>
+								<td style="text-align:center;">10</td>
+							</tr>
+						</tbody>
+					</table>
+		</div>
+	</div>
+</template>
