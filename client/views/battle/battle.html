@@ -1,6 +1,56 @@
 <template name="battle">
-  <div class="container">
-    <h1>Combat Simulator</h1>
+  <div>
+    <div class="container">
+      <h1>Combat Simulator</h1>
+      {{> combat}}
+      {{> combat}}
+      <button id="add-combatant-button" class="btn btn-default">
+        Add Combatant
+      </button>
+    </div>
+    <div class="container">
+      <button type="submit" id="submit-combat-button" class="btn btn-default">Submit Combat</button>
+    </div>
   </div>
+
+
+</template>
+
+
+
+<template name="combat">
+  <div id="combatant-form">
+    <form action="" role="form">
+      <div class="form-group">
+        <label for="combatant-name" id="combatant-form-label">Name of Combatant</label>
+        <input type="text" class="form-control" id="combatant-name" placeholder="General Ludendorff" required>
+      </div>
+      <div class="radio-inline">
+        <label for="">
+          <input type="radio" name="offense-defense-radio" id="offense-radio" value="" checked> Offense
+        </label>
+      </div>
+      <div class="radio-inline">
+        <label for="">
+          <input type="radio" name="offense-defense-radio" id="defense-radio" value="">Defense
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="supplied-armor" id="combatant-form-label">Supplied Armor</label>
+        <input type="number" class="form-control" id="supplied-armor" placeholder=0>
+      </div>
+      <div class="form-group">
+        <label for="supplied-infantry" id="combatant-form-label">Supplied Infantry</label>
+        <input type="number" class="form-control" id="supplied-infantry" placeholder=0>
+      </div>
+
+
+
+
+    </form>
+  </div>
+
+
+
 
 </template>
