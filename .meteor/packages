@@ -6,3 +6,13 @@
 meteor-platform
 autopublish
 insecure
+standard-app-packages
+less
+spiderable
+iron:router
+natestrauser:font-awesome
+matb33:collection-hooks
+ian:accounts-ui-bootstrap-3
+accounts-password
+sacha:spin
+
