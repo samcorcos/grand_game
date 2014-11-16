@@ -14,9 +14,13 @@
 // });
 
 
+
+// This needs to be "submit", not "click", but I can't get "submit" to work properly
+// The timer is really important!!! Otherwise, people won't trust the computer.
 Template.battle.events({
-  "click #submit-combat-button": function(e,t) {
-    e.preventDefault();
-    Router.go("/battle/outcome", {});
+  "click #submit-combat-button": function (event, template) {
+    Meteor.setTimeout(function() {
+      Router.go("/battle/outcome", {});
+    }, 1000)
   }
 });
