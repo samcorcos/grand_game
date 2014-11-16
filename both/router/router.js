@@ -24,5 +24,6 @@ Router.map(function () {
 	this.route("about", {path: "/about", controller: "AboutController"});
 	this.route("rules", {path: "/rules", controller: "RulesController"})
 	this.route("battle", {path: "/battle", controller: "BattleController"})
+	this.route("outcome", {path: "/battle/outcome", controller: "OutcomeController"})
 	/*ROUTER_MAP*/
 });
