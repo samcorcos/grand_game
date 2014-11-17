@@ -19,9 +19,7 @@
 // The timer is really important!!! Otherwise, people won't trust the computer.
 Template.battle.events({
   "click #submit-combat-button": function (event, template) {
-    Meteor.setTimeout(function() {
-      Router.go("/battle/outcome", {});
-    }, 1000)
+    Router.go("/battle/outcome", {});
   }
 });
 
@@ -32,6 +30,8 @@ Template.battle.events({
   }
 });
 
+
+// It would be nice if this could just remove the last item added, instead of a total reset... but, oh well
 Template.battle.events({
   "click #remove-combatant-button": function (events, template) {
     Battles.remove({});
@@ -41,22 +41,28 @@ Template.battle.events({
 })
 
 
-
+// // "change" is better than keyup
 // Template.battle.events({
 //   "keyup input": function (event, template) {
 //     alert("running")
 //   }
 // });
 
+// This needs to push the data into the objects in the collection
 Template.battle.events({
   "change input": function (event, template) {
-    alert("running")
+    Battles.update(
+      this._id,
+      {name: this.input }
+      // {upsert: true}
+    );
+    console.log(this._id);
   }
 })
 
 
 
-
+// Creates a client-side collection that is not synchronized between the client and the server-- basically, its just a temporary place to store objects
 Battles = new Mongo.Collection(null);
 
 Template.battle.rendered = function () {
@@ -65,6 +71,7 @@ Template.battle.rendered = function () {
   Battles.insert({});
 };
 
+// sets the "battles" variable to all of the objects found in the Battles local collection
 Template.battle.helpers({
   battles: Battles.find({})
 });

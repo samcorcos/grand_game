@@ -4,9 +4,14 @@ this.OutcomeController = RouteController.extend({
     /*YIELD_TEMPLATES*/
   },
   onBeforeAction: function() {
-    /*BEFORE_FUNCTION*/
-    this.next();
+    this.render("loading");
+    self = this;
+    Meteor.setTimeout(function(){
+      self.render("outcome");
+      self.next();
+    }, 2000)
   },
+
   action: function() {
     this.render();
     /*ACTION_FUNCTION*/
