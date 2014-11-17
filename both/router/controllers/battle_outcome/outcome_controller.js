@@ -8,7 +8,8 @@ this.OutcomeController = RouteController.extend({
     self = this;
     Meteor.setTimeout(function(){
       self.render("outcome");
-      self.next();
+      // It seems to work just fine without self.next()...
+      // self.next();
     }, 2000)
   },
 
