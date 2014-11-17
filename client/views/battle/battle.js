@@ -54,7 +54,7 @@ Template.battle.events({
     Battles.update(
       this._id,
       // {name: event.currentTarget.getAttribute()}
-      // {name: event.target }
+      {name: event.target }
       // {name: event.target.getAttribute() }
       // {name: Battles.findOne(this._id) }
       // {upsert: true}
