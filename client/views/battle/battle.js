@@ -24,3 +24,9 @@ Template.battle.events({
     }, 1000)
   }
 });
+
+Template.battle.events({
+  "click #add-combatant-button": function (event, template) {
+    $("#combatant-list").after("{{> combat}}");
+  }
+});

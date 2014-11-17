@@ -2,8 +2,10 @@
   <div>
     <div class="container">
       <h1>Combat Simulator</h1>
-      {{> combat}}
-      {{> combat}}
+      <div id="combatant-list">
+        {{> combat}}
+        {{> combat}}
+      </div>
       <button id="add-combatant-button" class="btn btn-default">
         Add Combatant
       </button>
@@ -40,6 +42,18 @@
       <div class="form-group">
         <label for="supplied-infantry" id="combatant-form-label">Supplied Infantry</label>
         <input type="number" class="form-control" id="supplied-infantry" placeholder=0>
+      </div>
+      <div class="form-group">
+        <label for="aircraft" id="combatant-form-label">Aircraft</label>
+        <input type="number" class="form-control" id="aircraft" placeholder=0>
+      </div>
+      <div class="form-group">
+        <label for="unsupplied-infantry" id="combatant-form-label">Unsupplied Infantry</label>
+        <input type="number" class="form-control" id="unsupplied-infantry" placeholder=0>
+      </div>
+      <div class="form-group">
+        <label for="unsupplied-armor" id="combatant-form-label">Unsupplied Armor</label>
+        <input type="number" class="form-control" id="unsupplied-armor" placeholder=0>
       </div>
     </form>
   </div>
