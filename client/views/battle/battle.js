@@ -53,12 +53,18 @@ Template.battle.events({
   "change input": function (event, template) {
     Battles.update(
       this._id,
-      {name: this.input }
+      // {name: event.currentTarget.getAttribute()}
+      // {name: event.target }
+      // {name: event.target.getAttribute() }
+      // {name: Battles.findOne(this._id) }
       // {upsert: true}
     );
     console.log(this._id);
   }
 })
+
+// The originating element of the event is available as the target property, while the element that matched the selector and is currently handling it is called currentTarget.
+
 
 
 
@@ -75,7 +81,3 @@ Template.battle.rendered = function () {
 Template.battle.helpers({
   battles: Battles.find({})
 });
-
-
-// using the context, we will know the id of the object we edited
-// Battles.update of this.id, set the value I'm trying to set
