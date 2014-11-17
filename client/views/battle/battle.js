@@ -19,7 +19,8 @@ Battles = new Mongo.Collection(null);
 // The timer is really important!!! Otherwise, people won't trust the computer.
 Template.battle.events({
   "click #submit-combat-button": function (event, template) {
-    Router.go("/battle/outcome", {});
+    event.preventDefault();
+    Router.go("/battle/outcome", {test: "it passed"});
   }
 });
 
