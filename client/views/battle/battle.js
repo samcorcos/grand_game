@@ -32,6 +32,14 @@ Template.battle.events({
   }
 });
 
+Template.battle.events({
+  "click #remove-combatant-button": function (events, template) {
+    Battles.remove({});
+    Battles.insert({});
+    Battles.insert({});
+  }
+})
+
 
 
 // Template.battle.events({
@@ -45,17 +53,6 @@ Template.battle.events({
     alert("running")
   }
 })
-
-
-//
-//  = {
-//   'keypress input.newLink': function (evt, template) {
-//     if (evt.which === 13) {
-//       var url = template.find(".newLink").value;
-//       // add to database
-//     }
-//   }
-// };
 
 
 
@@ -73,6 +70,5 @@ Template.battle.helpers({
 });
 
 
-// Create an event that registers keyup on teh input
 // using the context, we will know the id of the object we edited
-// battle.update of this.id, set the value I'm trying to set
+// Battles.update of this.id, set the value I'm trying to set
