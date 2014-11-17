@@ -27,6 +27,8 @@ Template.battle.events({
 
 Template.battle.events({
   "click #add-combatant-button": function (event, template) {
-    $("#combatant-list").after("{{> combat}}");
+
+    UI.insert(UI.render(Template.combat), $("#combatant-list").get(0));
+    // $("#combatant-list").after("{{> combat}}");
   }
 });
