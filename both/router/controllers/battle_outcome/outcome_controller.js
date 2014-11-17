@@ -1,5 +1,5 @@
 this.OutcomeController = RouteController.extend({
-  template: "Outcome",
+  template: "outcome",
   yieldTemplates: {
     /*YIELD_TEMPLATES*/
   },

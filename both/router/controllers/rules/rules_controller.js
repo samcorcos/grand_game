@@ -1,5 +1,5 @@
 this.RulesController = RouteController.extend({
-  template: "Rules",
+  template: "rules",
   yieldTemplates: {
     /*YIELD_TEMPLATES*/
   },

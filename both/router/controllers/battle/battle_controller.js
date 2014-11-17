@@ -1,5 +1,5 @@
 this.BattleController = RouteController.extend({
-  template: "Battle",
+  template: "battle",
   yieldTemplates: {
     /*YIELD_TEMPLATES*/
   },

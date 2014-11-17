@@ -1,8 +1,6 @@
 Template.politics.events({
   "click #submit-politics-button": function (event, template) {
-    Meteor.setTimeout(function() {
       Router.go("/politics/outcome", {});
-    }, 1000)
   }
 });
 

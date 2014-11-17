@@ -1,11 +1,15 @@
 this.PoliticsOutcomeController = RouteController.extend({
-  template: "PoliticsOutcome",
+  template: "politicsOutcome",
   yieldTemplates: {
     /*YIELD_TEMPLATES*/
   },
   onBeforeAction: function() {
-    /*BEFORE_FUNCTION*/
-    this.next();
+    this.render("loading");
+    self=this;
+    Meteor.setTimeout(function(){
+      self.render("politicsOutcome");
+      self.next();
+    }, 2000)
   },
   action: function() {
     this.render();

@@ -1,5 +1,5 @@
 this.AboutController = RouteController.extend({
-	template: "About",
+	template: "about",
 	yieldTemplates: {
 		/*YIELD_TEMPLATES*/
 	},

@@ -1,5 +1,5 @@
 this.PoliticsController = RouteController.extend({
-  template: "Politics",
+  template: "politics",
   yieldTemplates: {
     /*YIELD_TEMPLATES*/
   },
