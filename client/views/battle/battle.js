@@ -27,10 +27,38 @@ Template.battle.events({
 
 Template.battle.events({
   "click #add-combatant-button": function (event, template) {
-    UI.insert(UI.render(Template.combat), $("#combatant-list").get(0));
-    // $("#combatant-list").after("{{> combat}}");
+    Battles.insert({});
+    // UI.insert(UI.render(Template.combat), $("#combatant-list").get(0));
   }
 });
+
+
+
+// Template.battle.events({
+//   "keyup input": function (event, template) {
+//     alert("running")
+//   }
+// });
+
+Template.battle.events({
+  "change input": function (event, template) {
+    alert("running")
+  }
+})
+
+
+//
+//  = {
+//   'keypress input.newLink': function (evt, template) {
+//     if (evt.which === 13) {
+//       var url = template.find(".newLink").value;
+//       // add to database
+//     }
+//   }
+// };
+
+
+
 
 Battles = new Mongo.Collection(null);
 
@@ -43,3 +71,8 @@ Template.battle.rendered = function () {
 Template.battle.helpers({
   battles: Battles.find({})
 });
+
+
+// Create an event that registers keyup on teh input
+// using the context, we will know the id of the object we edited
+// battle.update of this.id, set the value I'm trying to set

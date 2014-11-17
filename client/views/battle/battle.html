@@ -5,11 +5,6 @@
       {{#each battles}}
         {{> combat}}
       {{/each}}
-
-
-
-
-
       <!-- <form action="" role="form" id="combatant-form">
         <div id="combatant-list">
           {{> combat}}
@@ -32,37 +27,37 @@
     <form id="combatant-form" action="" role="form">
       <div class="form-group">
         <label for="combatant-name" id="combatant-form-label">Name of Combatant</label>
-        <input type="text" class="form-control" id="combatant-name" placeholder="General Ludendorff" required>
+        <input value="{{name}}" type="text" class="form-control" id="combatant-name" placeholder="General Ludendorff" required>
       </div>
       <div class="radio-inline">
         <label for="">
-          <input type="radio" name="offense-defense-radio" id="offense-radio" value="" checked>Offense
+          <input value="{{offense}}" type="radio" name="offense-defense-radio" id="offense-radio" checked>Offense
         </label>
       </div>
       <div class="radio-inline">
         <label for="">
-          <input type="radio" name="offense-defense-radio" id="defense-radio" value="">Defense
+          <input value="{{defense}}" type="radio" name="offense-defense-radio" id="defense-radio">Defense
         </label>
       </div>
       <div class="form-group">
         <label for="supplied-armor" id="combatant-form-label">Supplied Armor</label>
-        <input type="number" class="form-control" id="supplied-armor" placeholder=0>
+        <input value="{{suppliedArmor}}" type="number" class="form-control" id="supplied-armor" placeholder=0>
       </div>
       <div class="form-group">
         <label for="supplied-infantry" id="combatant-form-label">Supplied Infantry</label>
-        <input type="number" class="form-control" id="supplied-infantry" placeholder=0>
+        <input value="{{suppliedInfantry}}" type="number" class="form-control" id="supplied-infantry" placeholder=0>
       </div>
       <div class="form-group">
         <label for="aircraft" id="combatant-form-label">Aircraft</label>
-        <input type="number" class="form-control" id="aircraft" placeholder=0>
+        <input value="{{aircraft}}" type="number" class="form-control" id="aircraft" placeholder=0>
       </div>
       <div class="form-group">
         <label for="unsupplied-infantry" id="combatant-form-label">Unsupplied Infantry</label>
-        <input type="number" class="form-control" id="unsupplied-infantry" placeholder=0>
+        <input value="{{unsuppliedInfantry}}" type="number" class="form-control" id="unsupplied-infantry" placeholder=0>
       </div>
       <div class="form-group">
         <label for="unsupplied-armor" id="combatant-form-label">Unsupplied Armor</label>
-        <input type="number" class="form-control" id="unsupplied-armor" placeholder=0>
+        <input value="{{unsuppliedArmor}}" type="number" class="form-control" id="unsupplied-armor" placeholder=0>
       </div>
     </form>
   </div>
