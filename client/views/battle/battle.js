@@ -36,7 +36,8 @@ Battles = new Mongo.Collection(null);
 
 Template.battle.rendered = function () {
   Battles.remove({});
-  Battles.insert({},{});
+  Battles.insert({});
+  Battles.insert({});
 };
 
 Template.battle.helpers({
