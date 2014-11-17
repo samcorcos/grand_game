@@ -1,5 +1,51 @@
 <template name="politics">
   <div class="container">
     <h1>Politics</h1>
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+    {{> politicsInput}}
+<!--     <button class="btn btn-default" id="add-politician-button">
+  Add Politician
+</button> -->
+  </div>
+  <div class="container">
+    <button type="submit" id="submit-politics-button" class="btn btn-default" form="politics-form">Submit Political Allocation</button>
+  </div>
+</template>
+
+
+<template name="politicsInput">
+  <div class="politics-form">
+    <form id="politics-form" role="form">
+      <div class="form-group">
+        <label for="politician-name" id="politician-form-label">Name of Politician</label>
+        <input type="text" class="form-control" id="politician-name" placeholder="Winston Churchill" required>
+      </div>
+      <div class="radio">
+        <label for="">
+          <input type="radio" name="politics-radio" id="zero-percent-politics" checked>0% Allocation
+        </label>
+      </div>
+      <div class="radio">
+        <label for="">
+          <input type="radio" name="politics-radio" id="ten-percent-politics">10% Allocation
+        </label>
+      </div>
+      <div class="radio">
+        <label for="">
+          <input type="radio" name="politics-radio" id="twenty-percent-politics">20% Allocation
+        </label>
+      </div>
+      <div class="radio">
+        <label for="">
+          <input type="radio" name="politics-radio" id="thirty-percent-politics">30% Allocation
+        </label>
+      </div>
+    </form>
   </div>
 </template>
