@@ -13,7 +13,7 @@
 //   }
 // });
 
-
+Battles = new Mongo.Collection(null);
 
 // This needs to be "submit", not "click", but I can't get "submit" to work properly
 // The timer is really important!!! Otherwise, people won't trust the computer.
@@ -48,27 +48,70 @@ Template.battle.events({
 //   }
 // });
 
+
+
+
 // This needs to push the data into the objects in the collection
 Template.battle.events({
-  "change input": function (event, template) {
+  "change input#combatant-name": function (event, template) {
     Battles.update(
       this._id,
-      // {name: event.currentTarget.getAttribute()}
-      {name: event.target.value}
-      // {name: event.target.getAttribute() }
-      // {name: Battles.findOne(this._id) }
-      // {upsert: true}
+      { $set: { name: event.target.value } }
     );
   }
-})
+});
 
+Template.battle.events({
+  "change input#supplied-armor": function (events, template) {
+    Battles.update(
+      this._id,
+      { $set: { suppliedArmor: event.target.value } }
+    );
+  }
+});
+
+Template.battle.events({
+  "change input#supplied-infantry": function (events, template) {
+    Battles.update(
+      this._id,
+      { $set: { suppliedInfantry: event.target.value } }
+    );
+  }
+});
+
+Template.battle.events({
+  "change input#aircraft": function (events, template) {
+    Battles.update(
+      this._id,
+      { $set: { aircraft: event.target.value } }
+    );
+  }
+});
+
+Template.battle.events({
+  "change input#unsupplied-infantry": function (events, template) {
+    Battles.update(
+      this._id,
+      { $set: { unsuppliedInfantry: event.target.value } }
+    );
+  }
+});
+
+Template.battle.events({
+  "change input#unsupplied-armor": function (events, template) {
+    Battles.update(
+      this._id,
+      { $set: { unsuppliedArmor: event.target.value } }
+    );
+  }
+});
 // The originating element of the event is available as the target property, while the element that matched the selector and is currently handling it is called currentTarget.
 
 
 
 
 // Creates a client-side collection that is not synchronized between the client and the server-- basically, its just a temporary place to store objects
-Battles = new Mongo.Collection(null);
+
 
 Template.battle.rendered = function () {
   Battles.remove({});
@@ -80,3 +123,8 @@ Template.battle.rendered = function () {
 Template.battle.helpers({
   battles: Battles.find({})
 });
+
+// Template.combat.helpers({
+//   name: Battles.findOne(_id).name,
+//   suppliedArmor: Battles.findOne(_id).suppliedArmor
+// });

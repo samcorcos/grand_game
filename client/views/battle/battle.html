@@ -32,7 +32,7 @@
     <form id="combatant-form" action="" role="form">
       <div class="form-group">
         <label for="combatant-name" id="combatant-form-label">Name of Combatant</label>
-        <input value="" type="text" class="form-control combatant-name" id="combatant-name" placeholder="General Ludendorff" required>
+        <input value="{{name}}" type="text" class="form-control combatant-name" id="combatant-name" placeholder="General Ludendorff" required>
       </div>
       <div class="radio-inline">
         <label for="">
@@ -46,7 +46,7 @@
       </div>
       <div class="form-group">
         <label for="supplied-armor" id="combatant-form-label">Supplied Armor</label>
-        <input value="" type="number" class="form-control" id="supplied-armor" placeholder=0>
+        <input value="{{suppliedArmor}}" type="number" class="form-control" id="supplied-armor" placeholder=0>
       </div>
       <div class="form-group">
         <label for="supplied-infantry" id="combatant-form-label">Supplied Infantry</label>
