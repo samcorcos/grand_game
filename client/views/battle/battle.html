@@ -2,12 +2,19 @@
   <div>
     <div class="container">
       <h1>Combat Simulator</h1>
-      <form action="" role="form" id="combatant-form">
+      {{#each battles}}
+        {{> combat}}
+      {{/each}}
+
+
+
+
+
+      <!-- <form action="" role="form" id="combatant-form">
         <div id="combatant-list">
           {{> combat}}
-          {{> combat}}
         </div>
-      </form>  
+      </form> -->
       <button id="add-combatant-button" class="btn btn-default">
         Add Combatant
       </button>

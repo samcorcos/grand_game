@@ -31,3 +31,14 @@ Template.battle.events({
     // $("#combatant-list").after("{{> combat}}");
   }
 });
+
+Battles = new Mongo.Collection(null);
+
+Template.battle.rendered = function () {
+  Battles.remove({});
+  Battles.insert({},{});
+};
+
+Template.battle.helpers({
+  battles: Battles.find({})
+});
