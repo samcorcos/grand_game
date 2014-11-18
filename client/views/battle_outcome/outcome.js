@@ -43,20 +43,36 @@ Template.outcome.helpers({
 
 Template.outcome.rendered = function () {
   combatStrengths = [];
-  for (i=0;i<Battles.find().count(); i++) {
-    suppliedArmor = Battles.find().fetch()[i].suppliedArmor;
-    suppliedInfantry = Battles.find().fetch()[i].suppliedInfantry;
-    aircraft = Battles.find().fetch()[i].aircraft;
-    unsuppliedArmor = Battles.find().fetch()[i].unsuppliedArmor;
-    unsuppliedInfantry = Battles.find().fetch()[i].unsuppliedArmor;
-
-    totalCombatStrength = function() {
+  for (i=0; i<Battles.find().count(); i++) {
+    (Battles.find().fetch()[i].suppliedArmor ? (suppliedArmor = Battles.find().fetch()[i].suppliedArmor) : (suppliedArmor = 0));
+    (Battles.find().fetch()[i].suppliedInfantry ? (suppliedInfantry = Battles.find().fetch()[i].suppliedInfantry) : (suppliedInfantry = 0));
+    (Battles.find().fetch()[i].aircraft ? (aircraft = Battles.find().fetch()[i].aircraft) : (aircraft = 0));
+    (Battles.find().fetch()[i].unsuppliedArmor ? (unsuppliedArmor = Battles.find().fetch()[i].unsuppliedArmor) : (unsuppliedArmor = 0));
+    (Battles.find().fetch()[i].unsuppliedInfantry ? (unsuppliedInfantry = Battles.find().fetch()[i].unsuppliedArmor) : (unsuppliedInfantry = 0));
+    totalCS = function() {
       // if (defense/offense)
       return (suppliedArmor * 4) + (suppliedInfantry * 2) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
     }
-    combatStrengths.push(totalCombatStrength());
+    combatStrengths.push(totalCS());
   }
+
   console.log(combatStrengths);
+
+  var winArray = function(combatStrengthArray) {
+    totalCombatStrength = 0;
+    newArray = [];
+    //should take in an array of combat strengths
+    for (i=0; i<combatStrengthArray.length; i++) {
+      totalCombatStrength += combatStrengthArray[i];
+    };
+    for (i=0; i<combatStrengthArray.length; i++) {
+      newArray.push((combatStrengthArray[i] / totalCombatStrength))
+    }
+    // should return an array of percentages out of 100%
+    return newArray;
+  }
+
+  console.log(winArray(combatStrengths))
 
 
 
