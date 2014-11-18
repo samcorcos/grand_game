@@ -2,6 +2,10 @@
   <div class="container">
     <h1>Outcome</h1>
     {{> winner}}
+    <!-- Would be nice to be able to display the percentages here -->
+  <!--     {{#each percentages}}
+    <p>Mike</p>
+  {{/each}} -->
     <h3>Losses</h3>
     {{#each battles}}
       {{> singleOutcome}}
@@ -43,7 +47,9 @@
 
 
 <template name="combatant">
-  {{combatantName}}
+  {{#each battles}}
+    {{combatantName}}
+  {{/each}}
 </template>
 
 

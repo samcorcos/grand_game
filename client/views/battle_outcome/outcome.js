@@ -1,11 +1,12 @@
-//going to need helpers to give name of each person
-
 Template.winner.helpers({
-  winnerName: "King George"
+  winnerName: "winner"
 });
 
 Template.combatant.helpers({
-  combatantName: "Mike"
+  combatantName: function() {
+    return this.combatantName;
+  },
+  battles: Battles.find()
 });
 
 Template.armor.helpers({
@@ -22,13 +23,11 @@ Template.airplane.helpers({
   airplaneLosses: 1
 });
 
-
-
-
-
 Template.outcome.helpers({
   battles: Battles.find()
 });
+
+
 
 // Template.singleOutcome.helpers({
 //   armor: this.Battles.suppliedArmor
@@ -42,6 +41,7 @@ Template.outcome.helpers({
 // Battles.find().fetch()[0].aircraft
 
 Template.outcome.rendered = function () {
+
   combatStrengths = [];
   for (i=0; i<Battles.find().count(); i++) {
     (Battles.find().fetch()[i].suppliedArmor ? (suppliedArmor = Battles.find().fetch()[i].suppliedArmor) : (suppliedArmor = 0));
@@ -56,8 +56,7 @@ Template.outcome.rendered = function () {
     combatStrengths.push(totalCS());
   }
 
-  console.log(combatStrengths);
-
+  // gives the winning percentage for each combatant
   var winArray = function(combatStrengthArray) {
     totalCombatStrength = 0;
     newArray = [];
@@ -66,13 +65,39 @@ Template.outcome.rendered = function () {
       totalCombatStrength += combatStrengthArray[i];
     };
     for (i=0; i<combatStrengthArray.length; i++) {
-      newArray.push((combatStrengthArray[i] / totalCombatStrength))
+      newArray.push((combatStrengthArray[i] / totalCombatStrength));
     }
     // should return an array of percentages out of 100%
     return newArray;
   }
 
-  console.log(winArray(combatStrengths))
+  console.log(winArray(combatStrengths));
+
+  var combatWinner = function(array) {
+    var x = Math.random();
+    var prob = array[0];
+    for (i=0; i<array.length; i++) {
+      console.log(x);
+      if (x < prob) {
+        return i;
+        console.log(i);
+      } else {
+        prob += array[i+1];
+      }
+    }
+  }
+
+  var z = winArray(combatStrengths);
+  var winningIndex = combatWinner(z);
+  winner = Battles.find().fetch()[winningIndex].combatantName;
+
+
+  //
+  //
+  // Template.outcome.helpers({
+  //   percantages: winArray(combatStrengths)
+  // })
+
 
 
 
