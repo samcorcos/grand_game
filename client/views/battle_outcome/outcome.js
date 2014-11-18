@@ -9,7 +9,9 @@ Template.combatant.helpers({
 });
 
 Template.armor.helpers({
-  armorLosses: 5
+  armorLosses: function() {
+    return this.suppliedArmor;
+  }
 });
 
 Template.infantry.helpers({
@@ -19,3 +21,15 @@ Template.infantry.helpers({
 Template.airplane.helpers({
   airplaneLosses: 1
 });
+
+
+
+
+
+Template.outcome.helpers({
+  battles: Battles.find()
+});
+
+// Template.singleOutcome.helpers({
+//   armor: this.Battles.suppliedArmor
+// })

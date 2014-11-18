@@ -3,7 +3,9 @@
     <h1>Outcome</h1>
     {{> winner}}
     <h3>Losses</h3>
-    {{> singleOutcome}} {{> singleOutcome}}
+    {{#each battles}}
+      {{> singleOutcome}}
+    {{/each}}
   </div>
 </template>
 
