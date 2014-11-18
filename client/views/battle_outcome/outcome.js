@@ -42,13 +42,21 @@ Template.outcome.helpers({
 // Battles.find().fetch()[0].aircraft
 
 Template.outcome.rendered = function () {
+  combatStrengths = [];
   for (i=0;i<Battles.find().count(); i++) {
     suppliedArmor = Battles.find().fetch()[i].suppliedArmor;
     suppliedInfantry = Battles.find().fetch()[i].suppliedInfantry;
     aircraft = Battles.find().fetch()[i].aircraft;
     unsuppliedArmor = Battles.find().fetch()[i].unsuppliedArmor;
     unsuppliedInfantry = Battles.find().fetch()[i].unsuppliedArmor;
+
+    totalCombatStrength = function() {
+      // if (defense/offense)
+      return (suppliedArmor * 4) + (suppliedInfantry * 2) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
+    }
+    combatStrengths.push(totalCombatStrength());
   }
+  console.log(combatStrengths);
 
 
 
