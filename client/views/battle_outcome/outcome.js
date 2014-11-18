@@ -33,3 +33,8 @@ Template.outcome.helpers({
 // Template.singleOutcome.helpers({
 //   armor: this.Battles.suppliedArmor
 // })
+
+// var items = Battles.find();
+// items.forEach(function(item) {
+//   console.log(this.item)
+// })
