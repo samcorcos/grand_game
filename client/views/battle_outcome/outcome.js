@@ -38,3 +38,19 @@ Template.outcome.helpers({
 // items.forEach(function(item) {
 //   console.log(this.item)
 // })
+
+// Battles.find().fetch()[0].aircraft
+
+Template.outcome.rendered = function () {
+  for (i=0;i<Battles.find().count(); i++) {
+    suppliedArmor = Battles.find().fetch()[i].suppliedArmor;
+    suppliedInfantry = Battles.find().fetch()[i].suppliedInfantry;
+    aircraft = Battles.find().fetch()[i].aircraft;
+    unsuppliedArmor = Battles.find().fetch()[i].unsuppliedArmor;
+    unsuppliedInfantry = Battles.find().fetch()[i].unsuppliedArmor;
+  }
+
+
+
+
+};
