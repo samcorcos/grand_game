@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 Session.default("winner", "Not updating")
 
 Template.winner.helpers({
   winnerName: Session.get("winner")
+=======
+Template.winner.helpers({
+  winnerName: "winner"
+>>>>>>> f374d2fed1c3f15e0486c5fc6b0f7fd16fd5f874
 });
 
 Template.combatant.helpers({
@@ -93,6 +98,19 @@ Template.outcome.rendered = function () {
   var winningIndex = combatWinner(z);
   winner = Battles.find().fetch()[winningIndex].combatantName;
 
+<<<<<<< HEAD
   Session.set("winner", winner);
+=======
+
+  //
+  //
+  // Template.outcome.helpers({
+  //   percantages: winArray(combatStrengths)
+  // })
+
+
+
+
+>>>>>>> f374d2fed1c3f15e0486c5fc6b0f7fd16fd5f874
 
 };
