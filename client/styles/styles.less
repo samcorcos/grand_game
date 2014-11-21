@@ -1,0 +1,343 @@
+@import "bootstrap3-less/bootstrap.import.less";
+
+/*IMPORT_THEME*/
+
+// variables
+
+@footer_height: 60px;
+
+
+// **** LAYOUT ****
+
+html,
+body {
+  height: 100%;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto (@footer_height * -1);
+  /* Pad bottom by footer height */
+  padding: 0 0 @footer_height;
+}
+
+/* Fixed height of the footer */
+#footer {
+  height: @footer_height;
+}
+
+.navbar-spacer {
+	height: 50px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#content .container, #subcontent .container {
+	max-width: 100%;
+}
+
+p {
+	font-size: 16px;
+}
+
+#jumbotron-image {
+	margin-right: 20px;
+}
+
+.nav-tabs {
+	margin-bottom: 10px;
+}
+
+#dataview-insert-button {
+	margin-right: 10px;
+}
+
+.modal-backdrop {
+	z-index: @zindex-modal - 1;
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+}
+
+
+// **** ACCOUNT ****
+
+.account-form {
+	max-width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.account-form .form-control {
+	margin-bottom: 15px;
+	height: 42px;
+	padding: 10px 10px;
+	font-size: 16px;
+}
+
+.account-form-text-after {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.accounts-info-box {
+	max-width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+/* ------------------ */
+
+.td-icon {
+	width: 30px;
+}
+
+.td-icon .fa {
+	cursor: pointer;
+	color: @text-muted;
+}
+
+.td-icon .fa:hover {
+	color: @text-color;
+}
+
+.th-sortable {
+	cursor: pointer;
+}
+
+.table-hover tr {
+	cursor: pointer;
+}
+
+#dataview-controls {
+	margin-bottom: 10px;
+}
+
+#dataview-controls-search {
+	display: inline;
+}
+
+
+// **** OBJECT TREE ****
+
+.well.object-tree-container {
+	width: 100%;
+	overflow-y: auto;
+	padding: 10px;
+}
+
+ul.object-tree li a {
+	display: inline-block;
+}
+
+ul.object-tree {
+	padding-left: 20px;
+}
+
+li.collapsed ul {
+	display: none;
+}
+
+.object-tree.nav > li > a {
+	padding: 5px 10px;
+}
+
+// **** OBJECT FORM ****
+
+.well.object-form-container {
+	padding: 10px;
+}
+
+.object-form-container .form-group {
+	margin-bottom: 0;
+}
+
+// examples page - should be moved to custom.less
+
+.example-img {
+	width: 400px;
+	height: auto;
+}
+
+.datepicker-dropdown {
+	z-index: 10000 !important;
+	padding: 4px;
+}
+
+
+
+
+// Custom CSS
+
+.navbar-default {
+  border-radius: 0px;
+}
+
+#signup-link {
+  color: #666666;
+}
+
+#forgot-password-link {
+  color: #666666;
+}
+
+#login-buttons-password {
+  border-color: #555555;
+  background-color: #666666;
+}
+
+#last-update {
+  font-size: 14px;
+  color: #666666;
+  text-align: right;
+}
+
+#rules-subtitle {
+  color: #666666;
+  font-style: italic;
+}
+
+#rules-title-section {
+  text-align: center;
+}
+
+#author {
+  float: left;
+  color: #666666;
+  font-style: italic;
+}
+
+#author-and-date {
+}
+
+blockquote {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 180%;
+}
+
+#combatant-form-label {
+  font-size: 16px;
+}
+
+.combatant-form {
+  max-width: 300px;
+  padding: 2rem;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 5px;
+  border-width: 1px;
+  float: left;
+  margin: 0.5rem;
+}
+
+.politics-form {
+  max-width: 200px;
+  padding: 2rem;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 5px;
+  border-width: 1px;
+  float: left;
+  margin: 0.5rem;
+}
+
+.politics-outcome {
+  max-width: 200px;
+  padding: 2rem;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 5px;
+  border-width: 1px;
+  float: left;
+  margin: 0.5rem;
+}
+
+.add-or-remove-buttons {
+  float: left;
+}
+
+#add-combatant-button {
+  margin: 1rem;
+}
+
+#remove-combatant-button {
+  margin: 1rem;
+}
+
+#add-politician-button {
+  float: left;
+  margin: 1rem;
+}
+
+#submit-combat-button {
+  margin: 1rem;
+}
+
+#submit-politics-button {
+  margin: 1rem;
+}
+
+.outcome-form {
+  max-width: 300px;
+  padding: 2rem 3rem 3rem 3rem;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 5px;
+  border-width: 1px;
+  float: left;
+  margin: 0.5rem;
+}
+
+.outcome-losses {
+  font-size: 36px;
+  font-weight: bold;
+  color: inherit;
+  margin-left: 2rem;
+}
+
+#outcome-winner {
+  font-size: 30px;
+}
+
+#infantry-svg {
+  vertical-align: middle;
+  margin-top: -1.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.4rem;
+  margin-left: 0.5rem;
+}
+
+#tank-svg {
+  vertical-align: middle;
+  margin-top: -1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#airplane-svg {
+  vertical-align: middle;
+  margin-top: -2rem;
+  margin-left: 0.6rem;
+  margin-right: 0.5rem;
+}
+
+.outcome-winner {
+  padding: 2rem;
+  border-style: solid;
+  border-color: #CCCCCC;
+  border-radius: 5px;
+  border-width: 1px;
+  margin: 0.5rem;
+  text-align: center;
+  background-color: #DDDDDD;
+}
