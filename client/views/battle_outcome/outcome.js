@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-Session.default("winner", "Not updating")
+Session.setDefault("winner", "Not updating");
 
 Template.winner.helpers({
   winnerName: Session.get("winner")
-=======
-Template.winner.helpers({
-  winnerName: "winner"
->>>>>>> f374d2fed1c3f15e0486c5fc6b0f7fd16fd5f874
 });
 
 Template.combatant.helpers({
@@ -50,12 +45,13 @@ Template.outcome.helpers({
 Template.outcome.rendered = function () {
 
   combatStrengths = [];
+  var b = Battles.find().fetch();
   for (i=0; i<Battles.find().count(); i++) {
-    (Battles.find().fetch()[i].suppliedArmor ? (suppliedArmor = Battles.find().fetch()[i].suppliedArmor) : (suppliedArmor = 0));
-    (Battles.find().fetch()[i].suppliedInfantry ? (suppliedInfantry = Battles.find().fetch()[i].suppliedInfantry) : (suppliedInfantry = 0));
-    (Battles.find().fetch()[i].aircraft ? (aircraft = Battles.find().fetch()[i].aircraft) : (aircraft = 0));
-    (Battles.find().fetch()[i].unsuppliedArmor ? (unsuppliedArmor = Battles.find().fetch()[i].unsuppliedArmor) : (unsuppliedArmor = 0));
-    (Battles.find().fetch()[i].unsuppliedInfantry ? (unsuppliedInfantry = Battles.find().fetch()[i].unsuppliedArmor) : (unsuppliedInfantry = 0));
+    (b[i].suppliedArmor ? (suppliedArmor = b[i].suppliedArmor) : (suppliedArmor = 0));
+    (b[i].suppliedInfantry ? (suppliedInfantry = b[i].suppliedInfantry) : (suppliedInfantry = 0));
+    (b[i].aircraft ? (aircraft = b[i].aircraft) : (aircraft = 0));
+    (b[i].unsuppliedArmor ? (unsuppliedArmor = b[i].unsuppliedArmor) : (unsuppliedArmor = 0));
+    (b[i].unsuppliedInfantry ? (unsuppliedInfantry = b[i].unsuppliedArmor) : (unsuppliedInfantry = 0));
     totalCS = function() {
       // if (defense/offense)
       return (suppliedArmor * 4) + (suppliedInfantry * 2) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
@@ -97,20 +93,7 @@ Template.outcome.rendered = function () {
   var z = winArray(combatStrengths);
   var winningIndex = combatWinner(z);
   winner = Battles.find().fetch()[winningIndex].combatantName;
-
-<<<<<<< HEAD
+  console.log(winner);
   Session.set("winner", winner);
-=======
-
-  //
-  //
-  // Template.outcome.helpers({
-  //   percantages: winArray(combatStrengths)
-  // })
-
-
-
-
->>>>>>> f374d2fed1c3f15e0486c5fc6b0f7fd16fd5f874
 
 };
