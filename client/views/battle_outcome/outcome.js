@@ -1,5 +1,9 @@
 Template.winner.helpers({
-  winnerName: "Still not fixed..."
+  winnerName: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].winner;
+    return getLast;
+  }
 });
 
 Template.combatant.helpers({
@@ -28,6 +32,8 @@ Template.outcome.helpers({
 });
 
 
+// Statistics.find().fetch()
+// .length-1 to get the last element
 
 // Template.singleOutcome.helpers({
 //   armor: this.Battles.suppliedArmor
@@ -41,8 +47,6 @@ Template.outcome.helpers({
 // Battles.find().fetch()[0].aircraft
 
 Template.outcome.rendered = function () {
-
-
 
   var combatStrength = function() {
     combatStrengths = [];
@@ -108,5 +112,10 @@ Template.outcome.rendered = function () {
     probabilities: winArray(),
     armies: Battles.find().fetch()
   })
+
+
+
+
+
 
 };
