@@ -82,6 +82,21 @@ Template.outcome.rendered = function () {
     return newArray;
   }
 
+  var namedWinArray = function() {
+    var win = winArray();
+    var namedArray = [];
+    for (i=0;i<win.length;i++) {
+      temp = {
+        name: Battles.find().fetch()[i].name,
+        probability: win[i]
+      }
+      namedArray.push(temp);
+      console.log("this is temp", temp)
+    }
+    console.log("This is namedArray", namedArray);
+    return namedArray;
+  }
+
   var combatWinner = function() { // takes in the winArray
     var x = Math.random();
     var array = winArray();
@@ -100,6 +115,10 @@ Template.outcome.rendered = function () {
     return Battles.find().fetch()[winningIndex].name;
   }
 
+  var combatLosses = function() {
+
+  }
+
   // 1) date
   // 2) winner
   // 3) probabilities (with name and probability as property)
@@ -110,6 +129,7 @@ Template.outcome.rendered = function () {
     date: Date().valueOf(),
     winner: combatWinner(),
     probabilities: winArray(),
+    namedProbabilities: namedWinArray(),
     armies: Battles.find().fetch()
   })
 
