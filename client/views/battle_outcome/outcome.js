@@ -20,16 +20,22 @@ Template.armor.helpers({
 });
 
 Template.infantry.helpers({
-  infantryLosses: 2
+  infantryLosses: function() {
+    return 2;
+  }
 });
 
 Template.airplane.helpers({
-  airplaneLosses: 1
+  airplaneLosses: function() {
+    return 4;
+  }
 });
 
 Template.outcome.helpers({
   battles: Battles.find()
 });
+
+
 
 Template.outcome.rendered = function () {
 
@@ -121,7 +127,9 @@ Template.outcome.rendered = function () {
   }
 
   var combatLosses = function() {
-    // first I need to find out how many units are in each army...
+    armyNumbers = buildArmyByNumber();
+    var x = Math.random();
+
     var totalLosses = [];
     var armorLosses = 0;
     var infantryLosses = 0;
@@ -129,8 +137,17 @@ Template.outcome.rendered = function () {
 
     var prob = winArray();
     for (i=0;i<prob.length;i++) { // this is going to run once for each person engaged
+      var currentArmy = armyNumbers[i];
+      var armor = currentArmy.totalArmor;
+      var infantry = currentArmy.totalInfantry;
+      var aircraft = currentArmy.aircraft;
       var lossProb = (1 - prob[i]) / 2  // prob of i is going to be the persons chance of winning.
+
+              //then I want it to run as many times as there are units of each type
     }
+
+
+
 
     // I want to return an array of objects. Generally there will be two objects in teh array.
 
@@ -152,8 +169,8 @@ Template.outcome.rendered = function () {
     probabilities: winArray(),
     namedProbabilities: namedWinArray(),
     armies: Battles.find().fetch(),
+    armyNumbers: buildArmyByNumber(),
     losses: combatLosses()
-
   })
 
 
