@@ -31,22 +31,29 @@ Template.outcome.helpers({
   battles: Battles.find()
 });
 
-
-// Statistics.find().fetch()
-// .length-1 to get the last element
-
-// Template.singleOutcome.helpers({
-//   armor: this.Battles.suppliedArmor
-// })
-
-// var items = Battles.find();
-// items.forEach(function(item) {
-//   console.log(this.item)
-// })
-
-// Battles.find().fetch()[0].aircraft
-
 Template.outcome.rendered = function () {
+
+  var buildArmyByNumber = function() {
+    var army = [];
+    var b = Battles.find().fetch();
+    for (i=0; i<Battles.find().count(); i++) {
+      (b[i].suppliedArmor ? (suppliedArmor = b[i].suppliedArmor) : (suppliedArmor = 0));
+      (b[i].suppliedInfantry ? (suppliedInfantry = b[i].suppliedInfantry) : (suppliedInfantry = 0));
+      (b[i].aircraft ? (aircraft = b[i].aircraft) : (aircraft = 0));
+      (b[i].unsuppliedArmor ? (unsuppliedArmor = b[i].unsuppliedArmor) : (unsuppliedArmor = 0));
+      (b[i].unsuppliedInfantry ? (unsuppliedInfantry = b[i].unsuppliedArmor) : (unsuppliedInfantry = 0));
+      totalArmor = Number(suppliedArmor) + Number(unsuppliedArmor);
+      totalInfantry = Number(suppliedInfantry) + Number(unsuppliedInfantry);
+      tempArmy = {
+        totalArmor: Number(totalArmor),
+        totalInfantry: Number(totalInfantry),
+        aircraft: Number(aircraft)
+      }
+      army.push(tempArmy);
+    }
+    return army;
+  }
+
 
   var combatStrength = function() {
     combatStrengths = [];
@@ -91,9 +98,7 @@ Template.outcome.rendered = function () {
         probability: win[i]
       }
       namedArray.push(temp);
-      console.log("this is temp", temp)
     }
-    console.log("This is namedArray", namedArray);
     return namedArray;
   }
 
@@ -116,6 +121,22 @@ Template.outcome.rendered = function () {
   }
 
   var combatLosses = function() {
+    // first I need to find out how many units are in each army...
+    var totalLosses = [];
+    var armorLosses = 0;
+    var infantryLosses = 0;
+    var aircraftLosses = 0;
+
+    var prob = winArray();
+    for (i=0;i<prob.length;i++) { // this is going to run once for each person engaged
+      var lossProb = (1 - prob[i]) / 2  // prob of i is going to be the persons chance of winning.
+    }
+
+    // I want to return an array of objects. Generally there will be two objects in teh array.
+
+    // takes in winArray
+    // or... 1 - the current person's probability / 2.
+
 
   }
 
@@ -130,7 +151,9 @@ Template.outcome.rendered = function () {
     winner: combatWinner(),
     probabilities: winArray(),
     namedProbabilities: namedWinArray(),
-    armies: Battles.find().fetch()
+    armies: Battles.find().fetch(),
+    losses: combatLosses()
+
   })
 
 
