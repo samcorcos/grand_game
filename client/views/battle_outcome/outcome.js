@@ -122,8 +122,19 @@ Template.outcome.rendered = function () {
       }
     }
     winningIndex = indexOfWinner();
-    Session.set("winnerTest", Battles.find().fetch()[winningIndex].name)
+    // Session.set("winnerTest", Battles.find().fetch()[winningIndex].name)
     return Battles.find().fetch()[winningIndex].name;
+  }
+
+  var lossCalculator = function(units,lossProb) { // x is the total number of armor, etc; y is the loss probability;
+    i = 0; losses = 0;
+    for (i=0;i<units;i++) {
+      var random = Math.random();
+      if (lossProb > random) {
+        losses++;
+      }
+    }
+    return losses;
   }
 
   var combatLosses = function() {
@@ -134,27 +145,27 @@ Template.outcome.rendered = function () {
     var armorLosses = 0;
     var infantryLosses = 0;
     var aircraftLosses = 0;
-
+    console.log("running")
     var prob = winArray();
+
     for (i=0;i<prob.length;i++) { // this is going to run once for each person engaged
+      console.log(i);
       var currentArmy = armyNumbers[i];
       var armor = currentArmy.totalArmor;
       var infantry = currentArmy.totalInfantry;
       var aircraft = currentArmy.aircraft;
-      var lossProb = (1 - prob[i]) / 2  // prob of i is going to be the persons chance of winning.
-
+      debugger;
+      var lossProb = ((1 - prob[i]) / 2 ); // prob of i is going to be the persons chance of winning.
+      var armorLoss = lossCalculator(armor, lossProb);
+      var infantryLoss = lossCalculator(infantry, lossProb);
+      var aircraftLoss = lossCalculator(aircraft, lossProb);
               //then I want it to run as many times as there are units of each type
     }
-
-
-
 
     // I want to return an array of objects. Generally there will be two objects in teh array.
 
     // takes in winArray
     // or... 1 - the current person's probability / 2.
-
-
   }
 
   // 1) date
