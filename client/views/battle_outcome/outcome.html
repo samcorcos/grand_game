@@ -7,9 +7,11 @@
     <p>Mike</p>
   {{/each}} -->
     <h3>Losses</h3>
-    {{#each battles}}
-      {{> singleOutcome}}
-    {{/each}}
+<!--     {{#each battles}}
+  {{> singleOutcome}}
+{{/each}} -->
+  <!-- The problem with this approach is that it doesnt take into account that the losses are not in the client-side database; what we need is... Take it from the statistics page? Run it in the helper?... But then where does the helper get the data from?... It could get it from battles. -->
+
   </div>
 </template>
 

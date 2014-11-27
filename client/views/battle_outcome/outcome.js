@@ -1,3 +1,5 @@
+// It seems to me like the most efficient way to do this would be to run a bunch of functions and create session variables so I don't have to run these functions a dozen time per battle. That said... I can't get the session variables to work the way I want them to.
+
 Template.winner.helpers({
   winnerName: function() {
     var allStats = Statistics.find().fetch();
@@ -13,21 +15,23 @@ Template.combatant.helpers({
   battles: Battles.find()
 });
 
+
+
 Template.armor.helpers({
   armorLosses: function() {
-    return this.suppliedArmor;
+    // return this.suppliedArmor;
   }
 });
 
 Template.infantry.helpers({
   infantryLosses: function() {
-    return 2;
+    // return this.suppliedInfantry;
   }
 });
 
 Template.airplane.helpers({
   airplaneLosses: function() {
-    return 4;
+    // return this.aircraft;
   }
 });
 
@@ -161,6 +165,7 @@ Template.outcome.rendered = function () {
       var aircraftLoss = lossCalculator(aircraft, lossProb);
               //then I want it to run as many times as there are units of each type
     }
+    return totalLosses;
 
     // I want to return an array of objects. Generally there will be two objects in teh array.
 
@@ -180,8 +185,8 @@ Template.outcome.rendered = function () {
     probabilities: winArray(),
     namedProbabilities: namedWinArray(),
     armies: Battles.find().fetch(),
-    armyNumbers: buildArmyByNumber(),
-    losses: combatLosses()
+    armyNumbers: buildArmyByNumber()
+    // losses: combatLosses()
   })
 
 
