@@ -131,7 +131,7 @@ Template.outcome.rendered = function () {
   }
 
   var lossCalculator = function(units,lossProb) { // x is the total number of armor, etc; y is the loss probability;
-    i = 0; losses = 0;
+    var i = 0, losses = 0;
     for (i=0;i<units;i++) {
       var random = Math.random();
       if (lossProb > random) {
@@ -152,8 +152,9 @@ Template.outcome.rendered = function () {
     console.log("running")
     var prob = winArray();
 
-    for (i=0;i<prob.length;i++) { // this is going to run once for each person engaged
+    for (var i=0;i<prob.length;i++) { // this is going to run once for each person engaged
       console.log(i);
+      console.log(prob, prob.length);
       var currentArmy = armyNumbers[i];
       var armor = currentArmy.totalArmor;
       var infantry = currentArmy.totalInfantry;
@@ -185,8 +186,8 @@ Template.outcome.rendered = function () {
     probabilities: winArray(),
     namedProbabilities: namedWinArray(),
     armies: Battles.find().fetch(),
-    armyNumbers: buildArmyByNumber()
-    // losses: combatLosses()
+    armyNumbers: buildArmyByNumber(),
+    losses: combatLosses()
   })
 
 
