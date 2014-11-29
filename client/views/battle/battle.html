@@ -2,14 +2,11 @@
   <div>
     <div class="container">
       <h1>Combat Simulator</h1>
-      {{#each battles}}
-        {{> combat}}
-      {{/each}}
-      <!-- <form action="" role="form" id="combatant-form">
-        <div id="combatant-list">
+      <div class="row">
+        {{#each battles}}
           {{> combat}}
-        </div>
-      </form> -->
+        {{/each}}
+      </div>
       <div class="add-or-remove-buttons btn-group-vertical" role="group">
         <button id="add-combatant-button" class="btn btn-default">
           Add Combatant
@@ -26,7 +23,49 @@
 </template>
 
 
+<template name="combat">
+  <div class="col sm12 m6 l4">
+    <div class="card grey lighten-1">
+      <div class="card-content">
+        <h1>Combat Input</h1>
+      </div>
+      <div class="card-footer">
+        <form action="" role="form" id="battle-form">
+          <p>
+            <input type="text" id="combatant-name" placeholder="Name of Combatant" required>
+          </p>
+          <div class="offense-defense-group">
+            <p>
+              <input type="radio" name="offense-defense" id="offense" checked>
+              <label for="offense">Offense</label>
+            </p>
+            <p>
+              <input type="radio" name="offense-defense" id="defense">
+              <label for="defense">Defense</label>
+            </p>
+          </div>
+          <p>
+            <input type="text" id='supplied-armor' placeholder="Supplied Armor">
+          </p>
+          <p>
+            <input type="text" id='supplied-infantry' placeholder='Supplied Infantry'>
+          </p>
+          <p>
+            <input type="text" id='aircraft' placeholder='Aircraft'>
+          </p>
+          <p>
+            <input type="text" id='unsupplied-armor' placeholder="Unsupplied Armor">
+          </p>
+          <p>
+            <input type="text" id="unsupplied-infantry" placeholder="Unsupplied Infantry">
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
 
+<!--
 <template name="combat">
   <div class="combatant-form">
     <form id="combatant-form" action="" role="form">
@@ -66,4 +105,4 @@
       </div>
     </form>
   </div>
-</template>
+</template> -->
