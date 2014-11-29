@@ -31,17 +31,36 @@
       </div>
       <div class="card-footer">
         <form id="politics-form" role="form">
-          <div>
-            <label for="politician-name" id="politician-form-label">Name of Politician</label>
-            <input type="text" class="" id="politician-name" placeholder="Winston Churchill" required>
+          <p>
+            <input type="text" id="politician-name" placeholder="Winston Churchill" required>
+            <label for="politician-name"></label>
+          </p>
+          <div class="dictatorship-democracy-group">
+            <p>
+              <input type="radio" name="dictatorship-democracy" id="dictatorship" checked>
+              <label for="dictatorship">Dictatorship</label>
+            </p>
+            <p>
+              <input type="radio" name="dictatorship-democracy" id="democracy">
+              <label for="democracy">Democracy</label>
+            </p>
           </div>
-          <div class="dictatorship-democracy-radio-group">
-            <div class="radio dictatorship-democracy-radio">
-              <label for="">
-                <input type="radio" name="dictatorship-democracy-radio-group">
-              </label>
-            </div>
-          </div>
+          <p>
+            <input type="radio" name="political-allocation" id="politics-zero" checked>
+            <label for="politics-zero">0% Allocation</label>
+          </p>
+          <p>
+            <input type="radio" name="political-allocation" id="politics-ten">
+            <label for="politics-ten">10% Allocation</label>
+          </p>
+          <p>
+            <input type="radio" name="political-allocation" id="politics-twenty">
+            <label for="politics-twenty">20% Allocation</label>
+          </p>
+          <p>
+            <input type="radio" name="political-allocation" id="politics-thirty">
+            <label for="politics-thirty">30% Allocation</label>
+          </p>
         </form>
       </div>
     </div>
