@@ -129,3 +129,9 @@ Template.battle.helpers({
 //   name: Battles.findOne(_id).name,
 //   suppliedArmor: Battles.findOne(_id).suppliedArmor
 // });
+
+Template.combat.helpers({
+  offenseDefense: function() {
+    return "offense-defense"
+  }
+})

@@ -7,15 +7,15 @@
           {{> combat}}
         {{/each}}
         <div class="combat-buttons" role="group">
-          <button id="add-combatant-button" class="btn btn-default">
+          <button id="add-combatant-button" class="waves-effect waves-light btn">
             Add Combatant
           </button>
-          <button id="remove-combatant-button" class="btn btn-default">
+          <button id="remove-combatant-button" class="waves-effect waves-light btn">
             Reset
           </button>
         </div>
       </div>
-      <button type="submit" id="submit-combat-button" class="btn btn-default" form="combatant-form">Submit Combat</button>
+      <button type="submit" id="submit-combat-button" class="waves-effect waves-light btn" form="">Submit Combat</button>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
         <h1>Combat Input</h1>
       </div>
       <div class="card-footer">
-        <form action="" role="form" id="battle-form">
+        <form class="battle-form">
           <p>
             <input type="text" id="combatant-name" placeholder="Name of Combatant" required>
           </p>
@@ -42,21 +42,11 @@
               <label for="defense">Defense</label>
             </p>
           </div>
-          <p>
-            <input type="text" id='supplied-armor' placeholder="Supplied Armor">
-          </p>
-          <p>
-            <input type="text" id='supplied-infantry' placeholder='Supplied Infantry'>
-          </p>
-          <p>
-            <input type="text" id='aircraft' placeholder='Aircraft'>
-          </p>
-          <p>
-            <input type="text" id='unsupplied-armor' placeholder="Unsupplied Armor">
-          </p>
-          <p>
-            <input type="text" id="unsupplied-infantry" placeholder="Unsupplied Infantry">
-          </p>
+          <p><input type="text" id='supplied-armor' placeholder="Supplied Armor"></p>
+          <p><input type="text" id='supplied-infantry' placeholder='Supplied Infantry'></p>
+          <p><input type="text" id='aircraft' placeholder='Aircraft'></p>
+          <p><input type="text" id='unsupplied-armor' placeholder="Unsupplied Armor"></p>
+          <p><input type="text" id="unsupplied-infantry" placeholder="Unsupplied Infantry"></p>
         </form>
       </div>
     </div>
