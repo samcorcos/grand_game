@@ -1,59 +1,16 @@
 <template name="navbar">
-  <div class="navbar navbar-default navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">
-            Toggle navigation
-          </span>
-          <span class="icon-bar">
-          </span>
-          <span class="icon-bar">
-          </span>
-          <span class="icon-bar">
-          </span>
-        </button>
-        <a class="navbar-brand" href="/">
-        </a>
-      </div>
-
-      <div id="menu" class="collapse navbar-collapse">
-        {{> layoutMainMenu}}
-        <div class="nav navbar-nav navbar-right">
-          {{> loginButtons}}
-        </div>
-      </div>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">
+        The Grand Game
+      </a>
+      <ul id="nav-mobile" class="right side-nav">
+        <li><a href="/about">About</a></li>
+        <li><a href="/rules">Rules</a></li>
+        <li><a href="/battle">Battle</a></li>
+        <li><a href="/politics">Politics</a></li>
+      </ul>
+      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
     </div>
-  </div>
-</template>
-
-
-<template name="layoutMainMenu">
-  <ul id="menu-items" class="nav navbar-nav">
-    <li id="menu-item-simple" class="{{menuItemClass 'home'}}">
-      <a href="{{pathFor 'home'}}">
-        Home page
-      </a>
-    </li>
-    <li id="menu-item-simple" class="{{menuItemClass 'about'}}">
-      <a href="{{pathFor 'about'}}">
-        About
-      </a>
-    </li>
-    <li id="menu-item-simple" class="{{menuItemClass 'rules'}}">
-      <a href="{{pathFor 'rules'}}">
-        Rules
-      </a>
-    </li>
-    <li id="menu-item-simple" class="{{menuItemClass 'battle'}}">
-      <a href="{{pathFor 'battle'}}">
-        Battle
-      </a>
-    </li>
-    <li id="menu-item-simple" class="{{menuItemClass 'politics'}}">
-      <a href="{{pathFor 'politics'}}">
-        Politics
-      </a>
-    </li>
-  </ul>
+  </nav>
 </template>

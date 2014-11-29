@@ -12,8 +12,7 @@ spiderable
 iron:router
 natestrauser:font-awesome
 matb33:collection-hooks
-ian:accounts-ui-bootstrap-3
 accounts-password
 sacha:spin
 markdown
-
+d0minikk:materialize-meteor
