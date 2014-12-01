@@ -24,15 +24,3 @@ Template.layout.rendered = function() {
 	});
 	/*TEMPLATE_RENDERED_CODE*/
 };
-
-// Template.layoutMainMenu.rendered = function() {
-//
-// };
-//
-// Template.layoutMainMenu.events({
-//
-// });
-//
-// Template.layoutMainMenu.helpers({
-//
-// });

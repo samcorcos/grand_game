@@ -7,9 +7,12 @@
     <p>Mike</p>
   {{/each}} -->
     <h3>Losses</h3>
-<!--     {{#each battles}}
-  {{> singleOutcome}}
-{{/each}} -->
+    <div class="row">
+      {{#each battles}}
+        {{> outcomeCard}}
+      {{/each}}
+    </div>
+
   <!-- The problem with this approach is that it doesnt take into account that the losses are not in the client-side database; what we need is... Take it from the statistics page? Run it in the helper?... But then where does the helper get the data from?... It could get it from battles. -->
 
   </div>
@@ -25,22 +28,23 @@
 
 
 
-<template name="singleOutcome">
-  <div class="outcome-form">
-    <h3>{{> combatant}}</h3>
-    <div>
-      <div>
-        {{> armor}}
+<template name="outcomeCard">
+  <div class="col sm12 m6 l4">
+    <div class="card grey lighten-1">
+      <div class="card-content">
+        <h1>{{> combatant}}</h1>
+        <p>Additional information</p>
       </div>
-    </div>
-    <div>
-      <div>
-        {{> infantry}}
-      </div>
-    </div>
-    <div>
-      <div>
-        {{> airplane}}
+      <div class="card-footer">
+        <p>
+          {{> infantry}}
+        </p>
+        <p>
+          {{> armor}}
+        </p>
+        <p>
+          {{> airplane}}
+        </p>
       </div>
     </div>
   </div>
