@@ -1,48 +1,20 @@
-// It seems to me like the most efficient way to do this would be to run a bunch of functions and create session variables so I don't have to run these functions a dozen time per battle. That said... I can't get the session variables to work the way I want them to.
-
-Template.winner.helpers({
-  winnerName: function() {
-    var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].winner;
-    return getLast;
-  }
-});
-
-Template.combatant.helpers({
+Template.outcomeCard.helpers({
   combatantName: function() {
     return this.name;
   },
-  battles: Battles.find()
-});
-
-Template.outcome.helpers({
   losses: function() {
     var allStats = Statistics.find().fetch();
     var getLast = allStats[allStats.length-1].losses;
     return getLast;
   }
-})
-
-//
-// Template.armor.helpers({
-//   armorLosses: function() {
-//     return this.suppliedArmor;
-//   }
-// });
-//
-// Template.infantry.helpers({
-//   infantryLosses: function() {
-//     return this.suppliedInfantry;
-//   }
-// });
-//
-// Template.airplane.helpers({
-//   airplaneLosses: function() {
-//     return this.aircraft;
-//   }
-// });
+});
 
 Template.outcome.helpers({
+  winnerName: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].winner;
+    return getLast;
+  },
   battles: Battles.find()
 });
 

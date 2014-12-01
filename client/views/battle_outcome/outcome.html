@@ -1,7 +1,7 @@
 <template name="outcome">
   <div class="container">
     <h1>Outcome</h1>
-    {{> winner}}
+    <p>{{winnerName}} Wins</p>
     <!-- Would be nice to be able to display the percentages here -->
   <!--     {{#each percentages}}
     <p>Mike</p>
@@ -19,20 +19,11 @@
 </template>
 
 
-
-<template name="winner">
-  <div class="outcome-winner">
-    <p id="outcome-winner">{{winnerName}} Wins</p>
-  </div>
-</template>
-
-
-
 <template name="outcomeCard">
   <div class="col sm12 m6 l4">
     <div class="card grey lighten-1">
       <div class="card-content">
-        <h1>{{> combatant}}</h1>
+        <h1>{{combatantName}}</h1>
         <p>Additional information</p>
       </div>
       <div class="card-footer">
@@ -48,12 +39,6 @@
       </div>
     </div>
   </div>
-</template>
-
-
-
-<template name="combatant">
-    {{combatantName}}
 </template>
 
 
