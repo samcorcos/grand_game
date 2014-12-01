@@ -149,17 +149,13 @@ Template.outcome.rendered = function () {
     var armorLosses = 0;
     var infantryLosses = 0;
     var aircraftLosses = 0;
-    console.log("running")
     var prob = winArray();
 
     for (var i=0;i<prob.length;i++) { // this is going to run once for each person engaged
-      console.log(i);
-      console.log(prob, prob.length);
       var currentArmy = armyNumbers[i];
       var armor = currentArmy.totalArmor;
       var infantry = currentArmy.totalInfantry;
       var aircraft = currentArmy.aircraft;
-      debugger;
       var lossProb = ((1 - prob[i]) / 2 ); // prob of i is going to be the persons chance of winning.
       var armorLoss = lossCalculator(armor, lossProb);
       var infantryLoss = lossCalculator(infantry, lossProb);

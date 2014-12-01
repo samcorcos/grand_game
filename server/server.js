@@ -6,5 +6,5 @@ Meteor.startup(function() {
 		}
 	}
 
-	
+
 });

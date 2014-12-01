@@ -19,7 +19,6 @@ if(Meteor.isClient) {
 }
 
 Router.map(function () {
-
 	this.route("home", {path: "/", controller: "HomeController"});
 	this.route("about", {path: "/about", controller: "AboutController"});
 	this.route("rules", {path: "/rules", controller: "RulesController"})
@@ -27,5 +26,4 @@ Router.map(function () {
 	this.route("outcome", {path: "/battle/outcome", controller: "OutcomeController"})
 	this.route("politics", {path: "/politics", controller: "PoliticsController"})
 	this.route("politicsOutcome", {path: "/politics/outcome", controller: "PoliticsOutcomeController"})
-	/*ROUTER_MAP*/
 });

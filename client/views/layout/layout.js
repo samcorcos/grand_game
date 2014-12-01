@@ -1,6 +1,6 @@
 Template.layout.rendered = function() {
 	// scroll to anchor
-	$('body').on('click', 'a', function(e) { 
+	$('body').on('click', 'a', function(e) {
 		var href = $(this).attr("href");
 		if(!href) {
 			return;
@@ -21,18 +21,18 @@ Template.layout.rendered = function() {
 				$('html,body').scrollTop(0);
 			}
 		}
-	}); 
+	});
 	/*TEMPLATE_RENDERED_CODE*/
 };
 
-Template.layoutMainMenu.rendered = function() {
-	
-};
-
-Template.layoutMainMenu.events({
-
-});
-
-Template.layoutMainMenu.helpers({
-
-});
+// Template.layoutMainMenu.rendered = function() {
+//
+// };
+//
+// Template.layoutMainMenu.events({
+//
+// });
+//
+// Template.layoutMainMenu.helpers({
+//
+// });
