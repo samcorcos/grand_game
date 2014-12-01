@@ -2,14 +2,9 @@
   <div class="container">
     <h1>Politics</h1>
     <div class="row">
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
-      {{> politicsInput}}
+      {{#each politics}}
+        {{> politicsInput}}
+      {{/each}}
     </div>
   <button type="submit" id="submit-politics-button" class="waves-effect waves-light btn" form="politics-form">Submit Political Allocation</button>
   </div>
@@ -32,29 +27,29 @@
           </p>
           <div class="dictatorship-democracy-group">
             <p>
-              <input type="radio" name="dictatorship-democracy" id="dictatorship" checked>
-              <label for="dictatorship">Dictatorship</label>
+              <input type="radio" name="dictatorship-democracy-{{_id}}" id="dictatorship-{{_id}}" checked>
+              <label for="dictatorship-{{_id}}">Dictatorship</label>
             </p>
             <p>
-              <input type="radio" name="dictatorship-democracy" id="democracy">
-              <label for="democracy">Democracy</label>
+              <input type="radio" name="dictatorship-democracy-{{_id}}" id="democracy-{{_id}}">
+              <label for="democracy-{{_id}}">Democracy</label>
             </p>
           </div>
           <p>
-            <input type="radio" name="political-allocation" id="politics-zero" checked>
-            <label for="politics-zero">0% Allocation</label>
+            <input type="radio" name="political-allocation-{{_id}}" id="politics-zero-{{_id}}" checked>
+            <label for="politics-zero-{{_id}}">0% Allocation</label>
           </p>
           <p>
-            <input type="radio" name="political-allocation" id="politics-ten">
-            <label for="politics-ten">10% Allocation</label>
+            <input type="radio" name="political-allocation-{{_id}}" id="politics-ten-{{_id}}">
+            <label for="politics-ten-{{_id}}">10% Allocation</label>
           </p>
           <p>
-            <input type="radio" name="political-allocation" id="politics-twenty">
-            <label for="politics-twenty">20% Allocation</label>
+            <input type="radio" name="political-allocation-{{_id}}" id="politics-twenty-{{_id}}">
+            <label for="politics-twenty-{{_id}}">20% Allocation</label>
           </p>
           <p>
-            <input type="radio" name="political-allocation" id="politics-thirty">
-            <label for="politics-thirty">30% Allocation</label>
+            <input type="radio" name="political-allocation-{{_id}}" id="politics-thirty-{{_id}}">
+            <label for="politics-thirty-{{_id}}">30% Allocation</label>
           </p>
         </form>
       </div>

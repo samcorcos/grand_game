@@ -27,15 +27,15 @@
         <p>Additional information</p>
       </div>
       <div class="card-footer">
-        <p>
-          {{> infantry}}
-        </p>
-        <p>
-          {{> armor}}
-        </p>
-        <p>
-          {{> airplane}}
-        </p>
+        <h3>
+          {{> infantry}} <span>{{infantryLoss}}</span>
+        </h3>
+        <h3>
+          {{> armor}} <span>{{armorLoss}}</span>
+        </h3>
+        <h3>
+          {{> aircraft}} <span>{{aircraftLoss}}</span>
+        </h3>
       </div>
     </div>
   </div>
@@ -141,7 +141,7 @@
 
 
 
-<template name="airplane">
+<template name="aircraft">
   <div>
     <svg version="1.1" id="airplane-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        width="38.25px" height="44.25px" viewBox="0 0 1024 1183" enable-background="new 0 0 1024 1183" xml:space="preserve">

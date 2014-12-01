@@ -2,9 +2,19 @@ Template.outcomeCard.helpers({
   combatantName: function() {
     return this.name;
   },
-  losses: function() {
+  aircraftLoss: function() {
     var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].losses;
+    var getLast = allStats[allStats.length-1].losses[0].aircarftLoss;
+    return getLast;
+  },
+  armorLoss: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].losses[0].armorLoss;
+    return getLast;
+  },
+  infantryLoss: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].losses[0].infantryLoss;
     return getLast;
   }
 });
@@ -17,8 +27,6 @@ Template.outcome.helpers({
   },
   battles: Battles.find()
 });
-
-
 
 Template.outcome.rendered = function () {
 
@@ -163,6 +171,7 @@ Template.outcome.rendered = function () {
     armyNumbers: buildArmyByNumber(),
     losses: combatLosses()
   })
+
 
 
 

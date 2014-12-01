@@ -1,7 +1,7 @@
 // If the politics cards don't exist in the collection, they will be populated from this list
 
-if(Politics.find().count() === 0) {
-  Politics.insert(
+if(PoliticsCards.find().count() === 0) {
+  PoliticsCards.insert(
     {
       politicsCards : {
         dictatorship : {

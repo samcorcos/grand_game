@@ -7,6 +7,23 @@ Template.politics.events({
   }
 });
 
+Template.politics.rendered = function() {
+  Politics.remove({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+  Politics.insert({});
+}
+
+Template.politics.helpers({
+  politics: Politics.find({})
+})
+
+
 // Template.politics.events({
 //   ""
 // })
