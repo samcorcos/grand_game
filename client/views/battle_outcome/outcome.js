@@ -15,25 +15,32 @@ Template.combatant.helpers({
   battles: Battles.find()
 });
 
-
-
-Template.armor.helpers({
-  armorLosses: function() {
-    // return this.suppliedArmor;
+Template.outcome.helpers({
+  losses: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].losses;
+    return getLast;
   }
-});
+})
 
-Template.infantry.helpers({
-  infantryLosses: function() {
-    // return this.suppliedInfantry;
-  }
-});
-
-Template.airplane.helpers({
-  airplaneLosses: function() {
-    // return this.aircraft;
-  }
-});
+//
+// Template.armor.helpers({
+//   armorLosses: function() {
+//     return this.suppliedArmor;
+//   }
+// });
+//
+// Template.infantry.helpers({
+//   infantryLosses: function() {
+//     return this.suppliedInfantry;
+//   }
+// });
+//
+// Template.airplane.helpers({
+//   airplaneLosses: function() {
+//     return this.aircraft;
+//   }
+// });
 
 Template.outcome.helpers({
   battles: Battles.find()
@@ -152,14 +159,13 @@ Template.outcome.rendered = function () {
     var prob = winArray();
 
     for (var i=0;i<prob.length;i++) { // this is going to run once for each person engaged
+      temp = {};
       var currentArmy = armyNumbers[i];
-      var armor = currentArmy.totalArmor;
-      var infantry = currentArmy.totalInfantry;
-      var aircraft = currentArmy.aircraft;
       var lossProb = ((1 - prob[i]) / 2 ); // prob of i is going to be the persons chance of winning.
-      var armorLoss = lossCalculator(armor, lossProb);
-      var infantryLoss = lossCalculator(infantry, lossProb);
-      var aircraftLoss = lossCalculator(aircraft, lossProb);
+      temp.armorLoss = lossCalculator(currentArmy.totalArmor, lossProb);
+      temp.infantryLoss = lossCalculator(currentArmy.totalInfantry, lossProb);
+      temp.aircraftLoss = lossCalculator(currentArmy.aircraft, lossProb);
+      totalLosses.push(temp);
               //then I want it to run as many times as there are units of each type
     }
     return totalLosses;
