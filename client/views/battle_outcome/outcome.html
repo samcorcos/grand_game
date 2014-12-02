@@ -3,9 +3,21 @@
 
     <h1>Outcome</h1>
     <p>{{winnerName}} Wins</p>
-    {{#each probabilities}}
-      <p>{{name}} {{probability}}</p>
-    {{/each}}
+
+    <div class="row">
+      <div class="centered col s12 m6 l6">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <span class="card-title">Probabilities</span>
+            <p>
+              {{#each probabilities}}
+                {{name}} {{percentage}}
+              {{/each}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <h3>Losses</h3>
     <div class="row">

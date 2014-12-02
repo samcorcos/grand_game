@@ -120,7 +120,8 @@ Template.outcome.rendered = function () {
       temp = {
         id: Battles.find().fetch()[i]._id,
         name: Battles.find().fetch()[i].name,
-        probability: win[i]
+        probability: win[i],
+        percentage: Math.round(win[i] * 100)
       }
       namedArray.push(temp);
     }
