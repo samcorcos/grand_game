@@ -4,20 +4,42 @@ Template.outcomeCard.helpers({
   combatantName: function() {
     return this.name;
   },
-  aircraftLoss1: function() {
+  // This function matches the _id of the loss to the _id of the currently selected player in Battles.
+  armorLoss: function() {
     var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].battle.losses[0].aircraftLoss;
-    return getLast;
+    var getLast = allStats[allStats.length-1].battle.losses;
+    thatId = this._id;
+    var temp = 0;
+    getLast.forEach(function(object, i) {
+      if (object._id == thatId) {
+        temp = object.armorLoss;
+      }
+    })
+    return temp;
   },
-  armorLoss1: function() {
+  infantryLoss: function() {
     var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].battle.losses[0].armorLoss;
-    return getLast;
+    var getLast = allStats[allStats.length-1].battle.losses;
+    thatId = this._id;
+    var temp = 0;
+    getLast.forEach(function(object, i) {
+      if (object._id == thatId) {
+        temp = object.infantryLoss;
+      }
+    })
+    return temp;
   },
-  infantryLoss1: function() {
+  aircraftLoss: function() {
     var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].battle.losses[0].infantryLoss;
-    return getLast;
+    var getLast = allStats[allStats.length-1].battle.losses;
+    thatId = this._id;
+    var temp = 0;
+    getLast.forEach(function(object, i) {
+      if (object._id == thatId) {
+        temp = object.aircraftLoss;
+      }
+    });
+    return temp;
   }
 });
 
@@ -59,24 +81,6 @@ Template.outcome.rendered = function () {
     }
     return army;
   }
-
-  // // This function is going to take in the army from Battles and convert it into a unit count.
-  // var buildSingleArmy = function(b) {
-  //   (b.suppliedArmor ? (suppliedArmor = b.suppliedArmor) : (suppliedArmor = 0));
-  //   (b.suppliedInfantry ? (suppliedInfantry = b.suppliedInfantry) : (suppliedInfantry = 0));
-  //   (b.aircraft ? (aircraft = b.aircraft) : (aircraft = 0));
-  //   (b.unsuppliedArmor ? (unsuppliedArmor = b.unsuppliedArmor) : (unsuppliedArmor = 0));
-  //   (b.unsuppliedInfantry ? (unsuppliedInfantry = b.unsuppliedArmor) : (unsuppliedInfantry = 0));
-  //   totalArmor = Number(suppliedArmor) + Number(unsuppliedArmor);
-  //   totalInfantry = Number(suppliedInfantry) + Number(unsuppliedInfantry);
-  //   army = {
-  //     totalArmor: Number(totalArmor),
-  //     totalInfantry: Number(totalInfantry),
-  //     aircraft: Number(aircraft)
-  //   }
-  //   return army;
-  // }
-
 
   var combatStrength = function() {
     combatStrengths = [];
@@ -120,7 +124,7 @@ Template.outcome.rendered = function () {
     var namedArray = [];
     for (i=0;i<win.length;i++) {
       temp = {
-        id: Battles.find().fetch()[i]._id,
+        _id: Battles.find().fetch()[i]._id,
         name: Battles.find().fetch()[i].name,
         probability: win[i],
         percentage: Math.round(win[i] * 100)
@@ -176,6 +180,7 @@ Template.outcome.rendered = function () {
       temp.armorLoss = lossCalculator(currentArmy.totalArmor, lossProb);
       temp.infantryLoss = lossCalculator(currentArmy.totalInfantry, lossProb);
       temp.aircraftLoss = lossCalculator(currentArmy.aircraft, lossProb);
+      temp._id = Battles.find().fetch()[i]._id;
       totalLosses.push(temp);
               //then I want it to run as many times as there are units of each type
     }
