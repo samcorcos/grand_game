@@ -62,8 +62,11 @@ Template.outcome.rendered = function () {
       (b[i].unsuppliedArmor ? (unsuppliedArmor = b[i].unsuppliedArmor) : (unsuppliedArmor = 0));
       (b[i].unsuppliedInfantry ? (unsuppliedInfantry = b[i].unsuppliedArmor) : (unsuppliedInfantry = 0));
       totalCS = function() {
-        // if (defense/offense)
-        return (suppliedArmor * 4) + (suppliedInfantry * 2) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
+        if (b[i].offense) {
+          return (suppliedArmor * 4) + (suppliedInfantry * 2) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
+        } else {
+          return (suppliedArmor * 2) + (suppliedInfantry * 3) + (aircraft * 1) + (unsuppliedArmor * 1) + (unsuppliedInfantry * 1);
+        }
       }
       combatStrengths.push(totalCS());
     }
