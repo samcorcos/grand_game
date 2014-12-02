@@ -47,8 +47,6 @@ Template.battle.events({
       this._id,
       { $set: { name: event.target.value } }
     );
-    console.log($("#offense-" + this._id + ":checked").val());
-    console.log($("#defense-" + this._id + ":checked").val());
   }
 });
 

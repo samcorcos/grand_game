@@ -1,20 +1,18 @@
 <template name="outcome">
   <div class="container">
+
     <h1>Outcome</h1>
     <p>{{winnerName}} Wins</p>
-    <!-- Would be nice to be able to display the percentages here -->
-  <!--     {{#each percentages}}
-    <p>Mike</p>
-  {{/each}} -->
+    {{#each probabilities}}
+      <p>{{name}} {{probability}}</p>
+    {{/each}}
+
     <h3>Losses</h3>
     <div class="row">
       {{#each battles}}
         {{> outcomeCard}}
       {{/each}}
     </div>
-
-  <!-- The problem with this approach is that it doesnt take into account that the losses are not in the client-side database; what we need is... Take it from the statistics page? Run it in the helper?... But then where does the helper get the data from?... It could get it from battles. -->
-
   </div>
 </template>
 

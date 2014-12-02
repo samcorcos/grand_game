@@ -3,29 +3,36 @@ Template.outcomeCard.helpers({
     return this.name;
   },
   aircraftLoss: function() {
-    var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].losses[0].aircarftLoss;
-    return getLast;
+    // var allStats = Statistics.find().fetch();
+    // var getLast = allStats[allStats.length-1].losses[0].aircarftLoss;
+    // return getLast;
   },
   armorLoss: function() {
-    var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].losses[0].armorLoss;
-    return getLast;
+    // var allStats = Statistics.find().fetch();
+    // var getLast = allStats[allStats.length-1].losses[0].armorLoss;
+    // return getLast;
   },
   infantryLoss: function() {
-    var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].losses[0].infantryLoss;
-    return getLast;
+    // var allStats = Statistics.find().fetch();
+    // var getLast = allStats[allStats.length-1].losses[0].infantryLoss;
+    // return getLast;
   }
 });
 
 Template.outcome.helpers({
   winnerName: function() {
     var allStats = Statistics.find().fetch();
-    var getLast = allStats[allStats.length-1].winner;
+    var getLast = allStats[allStats.length-1].battle.winner;
     return getLast;
   },
-  battles: Battles.find()
+  battles: function() {
+    return Battles.find();
+  },
+  probabilities: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].battle.probabilities;
+    return getLast;
+  }
 });
 
 Template.outcome.rendered = function () {
@@ -50,6 +57,23 @@ Template.outcome.rendered = function () {
     }
     return army;
   }
+
+  // // This function is going to take in the army from Battles and convert it into a unit count.
+  // var buildSingleArmy = function(b) {
+  //   (b.suppliedArmor ? (suppliedArmor = b.suppliedArmor) : (suppliedArmor = 0));
+  //   (b.suppliedInfantry ? (suppliedInfantry = b.suppliedInfantry) : (suppliedInfantry = 0));
+  //   (b.aircraft ? (aircraft = b.aircraft) : (aircraft = 0));
+  //   (b.unsuppliedArmor ? (unsuppliedArmor = b.unsuppliedArmor) : (unsuppliedArmor = 0));
+  //   (b.unsuppliedInfantry ? (unsuppliedInfantry = b.unsuppliedArmor) : (unsuppliedInfantry = 0));
+  //   totalArmor = Number(suppliedArmor) + Number(unsuppliedArmor);
+  //   totalInfantry = Number(suppliedInfantry) + Number(unsuppliedInfantry);
+  //   army = {
+  //     totalArmor: Number(totalArmor),
+  //     totalInfantry: Number(totalInfantry),
+  //     aircraft: Number(aircraft)
+  //   }
+  //   return army;
+  // }
 
 
   var combatStrength = function() {
@@ -94,6 +118,7 @@ Template.outcome.rendered = function () {
     var namedArray = [];
     for (i=0;i<win.length;i++) {
       temp = {
+        id: Battles.find().fetch()[i]._id,
         name: Battles.find().fetch()[i].name,
         probability: win[i]
       }
@@ -152,33 +177,43 @@ Template.outcome.rendered = function () {
               //then I want it to run as many times as there are units of each type
     }
     return totalLosses;
-
-    // I want to return an array of objects. Generally there will be two objects in teh array.
-
-    // takes in winArray
-    // or... 1 - the current person's probability / 2.
   }
 
-  // 1) date
-  // 2) winner
-  // 3) probabilities (with name and probability as property)
-  // 4) armies
+  // var singleCombatantLosses = function() {
+  //   armyNumbers = buildSingleArmy();
+  //   var x = Math.random();
+  //
+  //   var totalLosses = {};
+  //   var armorLosses = 0;
+  //   var infantryLosses = 0;
+  //   var aircraftLosses = 0;
+  //   var prob = Statistics.battle.find({probabilities: this._id}, {probability: Number})
+  //
+  //   var currentArmy = armyNumbers[i];
+  //   var lossProb = ((1 - prob) / 2 ); // prob of i is going to be the persons chance of winning.
+  //   temp.armorLoss = lossCalculator(currentArmy.totalArmor, lossProb);
+  //   temp.infantryLoss = lossCalculator(currentArmy.totalInfantry, lossProb);
+  //   temp.aircraftLoss = lossCalculator(currentArmy.aircraft, lossProb);
+  //     //then I want it to run as many times as there are units of each type
+  //   return totalLosses;
+  // }
 
+
+
+  // Battles.update(
+  //   this._id,
+  //   {$set: {losses: singleCombatantLosses()}}
+  // )
 
   Statistics.insert({
     date: Date().valueOf(),
-    winner: combatWinner(),
-    probabilities: winArray(),
-    namedProbabilities: namedWinArray(),
-    armies: Battles.find().fetch(),
-    armyNumbers: buildArmyByNumber(),
-    losses: combatLosses()
+    battle: {
+      winner: combatWinner(),
+      // probabilities: winArray(),
+      probabilities: namedWinArray(),
+      armies: Battles.find().fetch(),
+      // armyNumbers: buildArmyByNumber(),
+      losses: combatLosses()
+    }
   })
-
-
-
-
-
-
-
 };
