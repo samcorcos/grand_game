@@ -2,17 +2,25 @@
   <div class="container">
 
     <h1>Outcome</h1>
-    <p>{{winnerName}} Wins</p>
 
     <div class="row">
-      <div class="outcome-card col s12 m8 l6">
+      <div class="offset-l3 offset-m2 col s12 m8 l6">
         <div class="card blue-grey">
           <div class="card-content white-text">
-            <span class="card-title">Probabilities</span>
+            <div class="big-header">{{winnerName}} Wins!</div>
+          </div>
+        </div>
+      </div>
+      <div class="offset-l3 offset-m2 col s12 m8 l6">
+        <div class="card blue-grey">
+          <div class="card-content white-text">
+            <div class="big-header">Probabilities</div>
             <p>
               {{#each probabilities}}
-                <div class="outcome-probabilities">
-                  <strong>{{name}}</strong>: {{percentage}}%
+                <div class="outcome-probabilities row">
+                  <div class="col s6 m6 l6">
+                    <strong>{{name}}</strong>: {{percentage}}%
+                  </div>
                 </div>
               {{/each}}
             </p>
@@ -39,7 +47,7 @@
         <p>Additional information</p>
       </div>
       <div class="card-footer">
-        <div class="row">
+        <div class="row infantry-row">
           <div class="col s6 m6 l6">
             <h3>{{> infantry}}</h3>
           </div>
@@ -47,7 +55,7 @@
             {{infantryLoss}}
           </div>
         </div>
-        <div class="row">
+        <div class="row armor-row">
           <div class="col s6 m6 l6">
             <h3>{{> armor}}</h3>
           </div>
@@ -55,7 +63,7 @@
             {{armorLoss}}
           </div>
         </div>
-        <div class="row">
+        <div class="row aircraft-row">
           <div class="col s6 m6 l6">
             <h3>{{> aircraft}}</h3>
           </div>
