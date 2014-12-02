@@ -19,7 +19,6 @@ Template.battle.events({
     Battles.insert({});
   }
 });
-
 // It would be nice if this could just remove the last item added, instead of a total reset... but, oh well
 Template.battle.events({
   "click #remove-combatant-button": function (events, template) {
@@ -33,10 +32,23 @@ Template.battle.events({
 // These are all the events that add a property to the combatant objects whenever there is a change
 Template.battle.events({
   "change input#combatant-name": function (event, template) {
+    if ($("#offense-" + this._id + ":checked").val()) {
+      Battles.update(
+        this._id,
+        { $set: { offense: true, defense: false} }
+      )
+    } else {
+      Battles.update(
+        this._id,
+        { $set: { defense: true, offense: false } }
+      )
+    }
     Battles.update(
       this._id,
       { $set: { name: event.target.value } }
     );
+    console.log($("#offense-" + this._id + ":checked").val());
+    console.log($("#defense-" + this._id + ":checked").val());
   }
 });
 
@@ -70,6 +82,19 @@ Template.battle.events({
       this._id,
       { $set: { unsuppliedArmor: event.target.value } }
     );
+  },
+  "change [type='radio']": function(events, template) {
+    if ($("#offense-" + this._id + ":checked").val()) {
+      Battles.update(
+        this._id,
+        { $set: { offense: true, defense: false} }
+      )
+    } else {
+      Battles.update(
+        this._id,
+        { $set: { defense: true, offense: false } }
+      )
+    }
   }
 });
 
