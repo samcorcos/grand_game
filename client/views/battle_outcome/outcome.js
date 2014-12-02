@@ -1,21 +1,22 @@
+// this is a temporary, hard-coded solution to the losses displaying problem... I'll have to find a more elegant solution later.
 Template.outcomeCard.helpers({
   combatantName: function() {
     return this.name;
   },
-  aircraftLoss: function() {
-    // var allStats = Statistics.find().fetch();
-    // var getLast = allStats[allStats.length-1].losses[0].aircarftLoss;
-    // return getLast;
+  aircraftLoss1: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].battle.losses[0].aircraftLoss;
+    return getLast;
   },
-  armorLoss: function() {
-    // var allStats = Statistics.find().fetch();
-    // var getLast = allStats[allStats.length-1].losses[0].armorLoss;
-    // return getLast;
+  armorLoss1: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].battle.losses[0].armorLoss;
+    return getLast;
   },
-  infantryLoss: function() {
-    // var allStats = Statistics.find().fetch();
-    // var getLast = allStats[allStats.length-1].losses[0].infantryLoss;
-    // return getLast;
+  infantryLoss1: function() {
+    var allStats = Statistics.find().fetch();
+    var getLast = allStats[allStats.length-1].battle.losses[0].infantryLoss;
+    return getLast;
   }
 });
 

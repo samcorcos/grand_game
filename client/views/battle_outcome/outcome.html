@@ -11,7 +11,9 @@
             <span class="card-title">Probabilities</span>
             <p>
               {{#each probabilities}}
-                {{name}} {{percentage}}
+                <div class="outcome-probabilities">
+                  <strong>{{name}}</strong>: {{percentage}}%
+                </div>
               {{/each}}
             </p>
           </div>
@@ -37,15 +39,30 @@
         <p>Additional information</p>
       </div>
       <div class="card-footer">
-        <h3>
-          {{> infantry}} <span>{{infantryLoss}}</span>
-        </h3>
-        <h3>
-          {{> armor}} <span>{{armorLoss}}</span>
-        </h3>
-        <h3>
-          {{> aircraft}} <span>{{aircraftLoss}}</span>
-        </h3>
+        <div class="row">
+          <div class="col s6 m6 l6">
+            <h3>{{> infantry}}</h3>
+          </div>
+          <div class="outcome-loss col s6 m6 l6">
+            {{infantryLoss1}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6 m6 l6">
+            <h3>{{> armor}}</h3>
+          </div>
+          <div class="outcome-loss col s6 m6 l6">
+            {{armorLoss1}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6 m6 l6">
+            <h3>{{> aircraft}}</h3>
+          </div>
+          <div class="outcome-loss col s6 m6 l6">
+            {{aircraftLoss1}}
+          </div>
+        </div>
       </div>
     </div>
   </div>
