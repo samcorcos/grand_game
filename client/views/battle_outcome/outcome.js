@@ -1,4 +1,5 @@
 // this is a temporary, hard-coded solution to the losses displaying problem... I'll have to find a more elegant solution later.
+// What I need to do is get the losses represented in the client-side Battles collection
 Template.outcomeCard.helpers({
   combatantName: function() {
     return this.name;
