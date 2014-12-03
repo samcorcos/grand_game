@@ -1,12 +1,9 @@
-// Creates a client-side collection that is not synchronized between the client and the server-- basically, its just a temporary place to store objects
 Battles = new Mongo.Collection(null);
 
-// This needs to be "submit", not "click", but I can't get "submit" to work properly...
-// The timer is really important!!! Otherwise, people won't trust the computer.
 Template.battle.events({
   "click #submit-combat-button": function (event, template) {
     Battles.update(
-      this._id, // The problem is on this line! It doesn't know what "this" you're referring to.
+      this._id,
       { $set: {offense: true} }
     );
     Router.go("/battle/outcome", {test: "it passed"});
@@ -19,7 +16,7 @@ Template.battle.events({
     Battles.insert({});
   }
 });
-// It would be nice if this could just remove the last item added, instead of a total reset... but, oh well
+
 Template.battle.events({
   "click #remove-combatant-button": function (events, template) {
     Battles.remove({});
