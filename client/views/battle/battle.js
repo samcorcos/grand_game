@@ -36,12 +36,12 @@ Template.battle.events({
       Battles.update(
         this._id,
         { $set: { offense: true, defense: false} }
-      )
+      );
     } else {
       Battles.update(
         this._id,
         { $set: { defense: true, offense: false } }
-      )
+      );
     }
     Battles.update(
       this._id,
@@ -86,12 +86,12 @@ Template.battle.events({
       Battles.update(
         this._id,
         { $set: { offense: true, defense: false} }
-      )
+      );
     } else {
       Battles.update(
         this._id,
         { $set: { defense: true, offense: false } }
-      )
+      );
     }
   }
 });
