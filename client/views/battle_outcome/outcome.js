@@ -14,7 +14,7 @@ Template.outcomeCard.helpers({
       if (object._id == thatId) {
         temp = object.armorLoss;
       }
-    })
+    });
     return temp;
   },
   infantryLoss: function() {
@@ -26,7 +26,7 @@ Template.outcomeCard.helpers({
       if (object._id == thatId) {
         temp = object.infantryLoss;
       }
-    })
+    });
     return temp;
   },
   aircraftLoss: function() {
@@ -101,7 +101,7 @@ Template.outcome.rendered = function () {
       combatStrengths.push(totalCS());
     }
     return combatStrengths;
-  }
+  };
 
   // gives the winning percentage for each combatant
   var winArray = function() { // takes in combat strengths array

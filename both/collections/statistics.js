@@ -1,5 +1,6 @@
 Statistics = new Mongo.Collection("statistics");
 
+PolStats = new Mongo.Collection("polStats");
 
 // You need to specify "ObjectId" when querying an object by its ID
 // db.statistics.find({_id: ObjectId("5467dccab65c02e5d7dff68a")})
