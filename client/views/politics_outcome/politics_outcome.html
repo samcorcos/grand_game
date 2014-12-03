@@ -1,12 +1,30 @@
 <template name="politicsOutcome">
   <div class="container">
     <h1>Political Outcomes</h1>
-    {{> individualPoliticalOutcome}}
+    <div class="row">
+      {{#each politicians}}
+        {{> politicalOutcomeCard}}
+      {{/each}}
+    </div>
   </div>
 </template>
 
 
-<template name="individualPoliticalOutcome">
+<template name="politicalOutcomeCard">
+  <div class="col sm12 m6 l4">
+    <div class="card grey lighten-1">
+      <div class="card-content">
+        <h1>{{name}}</h1>
+      </div>
+      <div class="card-footer">
+        <p>{{outcome}}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!--
+
   <div class="politics-outcome">
     <h3>Patrick{{name}}</h3>
     <p>War Weariness.<br>Lose 3 Francs if you do not possess all of your original territories.<br>Otherwise, nothing happens.</p>
@@ -16,3 +34,4 @@
     <p>Disturbances in Captured Cities.<br>Lose 1 Franc for every city beyond your initial territory that you currently occupy.</p>
   </div>
 </template>
+ -->

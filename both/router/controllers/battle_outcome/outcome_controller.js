@@ -10,7 +10,7 @@ this.OutcomeController = RouteController.extend({
       self.render("outcome");
       // It seems to work just fine without self.next()...
       // self.next();
-    }, 1000)
+    }, 2000);
   },
 
   action: function() {

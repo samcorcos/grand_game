@@ -8,8 +8,7 @@ this.PoliticsOutcomeController = RouteController.extend({
     self=this;
     Meteor.setTimeout(function(){
       self.render("politicsOutcome");
-      self.next();
-    }, 2000)
+    }, 2000);
   },
   action: function() {
     this.render();
